@@ -1,30 +1,7 @@
-.fl {
-  float: left;
-}
-.fr {
-  float: right;
-}
 .content {
   background: #f9f9f9;
 }
-.appTop {
-  height: 35px;
-  line-height: 35px;
-  background: #eeeeee;
-  padding: 0 10px;
-}
-.AppFoort {
-  border-top: 1px solid #e0e0e0;
-  height: 56px;
-  line-height: 56px;
-  background: #eeeeee;
-  text-align: center;
-}
-.AppFoort a {
-  margin: 8px;
-  color: #333333;
-  font-size: 12px;
-}
+
 .banner {
   width: 100%;
 }
@@ -68,6 +45,7 @@
   text-align: center;
   background: #ffab73;
   border-radius: 3px;
+  padding: 0;  
 }
 .list {
   background: #fff;
@@ -117,4 +95,5 @@
   text-align: center;
   background: #ffab73;
   border-radius: 3px;
+  padding: 0;
 }
