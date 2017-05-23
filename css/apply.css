@@ -1,0 +1,90 @@
+.top{
+  width: 100%;
+  height: 45px;
+  background: #45a5cf;
+  position: relative;
+}
+
+.top span{
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.top h3{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 45px;
+  text-align: center;
+}
+
+.top button{
+  width: 64px;
+  height: 32px;
+  background:#6ec1e5;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 24px;
+  color: #fff;
+}
+
+.state{
+  width: 100%;
+  height: 45px;
+  background: #e7e7e7;
+}
+
+.state li{
+  text-align: center;
+  float: left;
+  color: #999999;
+  font-size: 12px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  width: 112px;
+}
+
+.state li span{
+  font-size: 16px;
+}
+
+.state .active{
+  background: #f37872;
+  color: #fff;
+}
+
+.useInfo{
+  padding: 5px 15px; 
+
+}
+
+.useInfo p{
+  height: 25px;
+  line-height: 25px;
+  color: #555555;
+  font-size: 15px;
+  text-align:left;
+  margin-top: 15px;
+}
+
+.useInfo input{
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 13px;
+}
+.useInfo input[type="radio"]{
+  width: auto;
+}
+
+.useInfo input[type="radio"] {
+  color:#45a5cf;
+}

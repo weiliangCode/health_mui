@@ -1,0 +1,203 @@
+.fixedBottom{
+  z-index: 999;
+  width: 100%;
+  height: 42px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #f2f2f2;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: #fcfcfc;
+}
+
+.fixedBottom button{
+  width: 48%;
+  height: 30px;
+  margin-top: 6px;
+  border-radius: 5px;
+}
+
+.fixedBottom .l{
+  float: left;
+  background: #ff6600;
+  color: #fff;
+}
+
+.fixedBottom .r{
+  float: right;
+  border: 1px solid #f2f2f2;
+  background: #ffffff;
+  color: #000000;
+}
+
+.banner{
+  width: 100%;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.banner img{
+  width: 100%;
+}
+
+.title{
+  height: 71px;
+  border-bottom: 1px dashed #f2f2f2;
+  background: #fff;
+}
+
+.title h3{
+  float: left;
+  font-size: 16px;
+  color: #000000;
+  line-height: 71px;
+  margin-left: 8px;
+}
+
+
+.title button{
+  width: 86px;
+  height: 41px;
+  border: 1px solid #f2f2f2;
+  background: #fbfbfb;
+  float: right;
+  color: #cc3431;
+  margin: 18px 8px 0 10px;
+  font-size: 12px;
+  padding: 0;
+}
+
+.title .pri{
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  background: #cc3431;
+  border-radius: 9px;
+  display:inline-block;
+}
+
+.title .line{
+  width: 1px;
+  height: 43px;
+  background: #f2f2f2;
+  float: right;
+  display: block;
+  margin-top: 18px;
+}
+
+.price{
+  height: 33px;
+  line-height: 33px;
+  border-bottom: 1px solid #ddd;
+  background: #ffffff;
+  font-size: 12px;
+  
+}
+
+.price .new{
+  color: #ff6600;
+  margin-left: 8px;
+}
+
+.price .new b{
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.price .old{
+    text-decoration:line-through;
+    color: #999999;
+}
+
+.surplus{
+  height: 67px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+.surplus p{
+  line-height: 28px;
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-left: 8px;
+}
+
+.surplus span{
+  color: #000000;
+  margin-left: 5px;
+}
+
+.attention{
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  height: 45px;
+  overflow: hidden;
+}
+
+.attention button{
+  width: 50%;
+  height: 100%;
+  font-size: 12px;
+  color: #4a4a4a;
+  border: none;
+}
+
+.attention .l{
+  float: left;
+  border-right: 1px solid #ddd;
+}
+
+.shop{
+  width: 100%;
+  height: 79px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.shop p{
+  line-height: 39px;
+  margin-left: 10px;
+}
+
+.shop p img{
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-top: 12px;
+  margin-right: 5px;
+}
+
+.shop p button{
+  float: right;
+  width: 65px;
+  height: 14px;
+  font-size: 14px;
+  border: none;
+  border-left: 1px solid #ddd;
+  margin-top: 15px;
+  padding: 0;
+  font-size: 12px;
+}
+
+
+.imgInfo{
+  width: 100%;
+  background: #f9f9f9;
+  padding: 54px 10px 42px;
+  box-sizing: border-box;
+}
+
+.imgInfo img{
+  width: 100%;
+}
+
+.AppFoort{
+  margin-bottom: 42px;
+}
+
+
+

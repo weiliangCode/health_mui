@@ -99,6 +99,17 @@ html {
 	z-index: 999;
 }
 
+.fixedTop .mui-icon-person{
+	float: left;
+	width: 24px;
+	height: 24px;
+	border-radius: 12px;
+	background: #fff;
+	color: #ddd;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
 .fixedTop p{
 	float: left;
 	height: 24px;
@@ -148,6 +159,10 @@ html {
 	height: 23px;
 	margin-top: 6px;
 	margin-right: 8px;
+}
+
+.appTop a{
+	color: #a1a1a1;
 }
 
 .AppFoort {

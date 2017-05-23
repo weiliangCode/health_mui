@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>申请代言-微店系统</title>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link href="../css/apply.css" rel="stylesheet" />
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/apply.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="top">
+    <span class="mui-icon mui-icon-arrowleft"></span>
+    <h3>设置店铺</h3>
+    <button type="button">保存</button>
+  </div>
+
+  <div class="state">
+    <ul>
+      <li class="active"><span>1</span>设置店铺信息</li>
+      <li><span>2</span>完成</li>
+    </ul>
+  </div>
+
+
+  <form class="useInfo"> 
+    <p>店铺名称</p>
+    <input type="text" name="storeName" placeholder="请输入店铺名称">
+    <p>管理账号（手机号）</p>
+    <input type="number" name="phone" placeholder="清输入手机号">
+    <p>联系人姓名</p>
+    <input type="text" name="useName" placeholder="请输入姓名" value="张三">
+    <p>联系人QQ</p>
+    <input type="number" name="qq" placeholder="请输入QQ号--选填">
+    <p>
+      <input name="agreement" type="radio" value="" />
+      我已阅读并同意
+      <a href="javascript:;">代言协议</a>
+    </p>
+  </form>
+  
+</body>
+
+</html>

@@ -26,6 +26,7 @@
   font-size: 13px;
   margin-top: 12px;
   font-weight: 900;
+  color: #000;
 }
 .goodsList li p {
   height: 35px;
@@ -51,12 +52,22 @@
   background: #fff;
   margin: 10px;
 }
+
 .list li {
-  display: flex;
   margin-top: 8px;
   border: 1px solid #ddd;
-  height: 136px;
+  
 }
+
+.list a{
+  display: flex;  
+  width: 100%;
+  height: 136px;
+  color: #000;
+  /*display: block;*/
+}
+
+
 .list li img {
   height: 94px;
   margin-top: 21px;
@@ -77,6 +88,7 @@
   font-size: 13px;
   font-weight: 900;
   margin-top: 13px;
+  font-weight: 100;
 }
 .list .list_R p {
   font-size: 12px;
@@ -96,4 +108,5 @@
   background: #ffab73;
   border-radius: 3px;
   padding: 0;
+  border: none;
 }
