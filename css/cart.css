@@ -12,10 +12,17 @@
   width: 50%;
   height: 38px;
   line-height: 38px;
-  color: #999999;
   float: left;
   text-align: center;
 }
+
+.top li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #999999;
+}
+
 
 .top .active{
   color: #f15a0c;
