@@ -1,0 +1,15 @@
+.top{
+  height: 41px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.top h2{
+  height:38px;
+  width: 100%;
+  border-bottom: 2px solid #f15a0c;
+  color: #f15a0c;
+  font-size: 13px;
+  line-height: 38px;
+  text-align: center;
+}
