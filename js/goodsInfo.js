@@ -5,6 +5,26 @@ window.onload = function () {
   //   document.querySelector(".J_fixedTop").style.display = "none";
   // }
 
+  var goodsId = location.search;
+    goodsId = goodsId.split("=")[1];
+
+    //初始化数据
+  mui.post(getGoodsInfo(), {
+    g_id: goodsId
+  }, function (data) {
+      console.log(data);
+      var obj = data.data.goods_info;
+      $('.J_title').html(obj.goods_name);
+      $('.J_price').html(obj.goods_price);
+      $('.J_goodsNum').html(obj.goods_num);
+      $(".J_collection").html("关注(" + obj.collection_num + "）");
+      $(".J_notice").html("收藏（" + obj.notice_num + "）");
+      
+    }, 'json'
+  );
+
+
+
   mui(".J_fixedTop").on('tap', '.J_fixedTopClrear', function () {
     mui(".J_fixedTop")[0].style.display = "none";
   })

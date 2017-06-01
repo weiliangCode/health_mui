@@ -6,14 +6,15 @@ mui.ready(function() {
   }
 
   //初始化数据
-  mui.post(getUrl(), {
+  mui.post(getGoodslist(), {
     username: '111',
     password: 'FFFF'
   }, function (data) {
+      console.log(data);
       var goodsList = data.data.promotion;
       for(var i=0;i<goodsList.length; i++) {
         var str = '<li>';
-            str += '<a href="' + goodsList[i].goods_url + '?id=' + goodsList[i].id + '">';
+            str += '<a href="html/goodsInfo.html?id=' + goodsList[i].id + '">';
             str += '<img src="images/index/goods001.jpg" alt="">';
             str += '<h3>' + goodsList[i].name + '</h3>';
             str += '<p>';
@@ -27,7 +28,7 @@ mui.ready(function() {
       var list = data.data.normal_goods;
       for(var i=0;i<list.length; i++) {
         var str = '<li>';
-            str += '<a href="' + list[i].goods_url + '?id=' + list[i].id + '">';
+            str += '<a href="html/goodsInfo.html?id=' + list[i].id + '">';
             str += '<div class="fl list_L">';
             str += '	<img src="images/index/goods005.png" alt="">';
             str += '</div>';
