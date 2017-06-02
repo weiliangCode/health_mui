@@ -6,22 +6,24 @@ window.onload = function () {
   // }
 
   var goodsId = location.search;
-    goodsId = goodsId.split("=")[1];
+  goodsId = goodsId.split("=")[1];
 
-    //初始化数据
-  mui.post(getGoodsInfo(), {
-    g_id: goodsId
-  }, function (data) {
-      console.log(data);
+  //初始化数据
+  function dataInit() {
+    mui.post(getGoodsInfo(), {
+      g_id: goodsId
+    }, function (data) {
       var obj = data.data.goods_info;
       $('.J_title').html(obj.goods_name);
       $('.J_price').html(obj.goods_price);
       $('.J_goodsNum').html(obj.goods_num);
-      $(".J_collection").html("关注(" + obj.collection_num + "）");
-      $(".J_notice").html("收藏（" + obj.notice_num + "）");
-      
+      $(".J_notice").html("关注 （" + obj.notice_num + "）");
+      $(".J_collection").html("收藏（" + obj.collection_num + "）");
     }, 'json'
-  );
+    );
+  }
+
+  dataInit();
 
 
 
@@ -92,6 +94,47 @@ window.onload = function () {
   })
 
 
+  //关注按钮
+  $('.J_notice').on('tap', function () {
+    mui.post(getGoodsNotice(), {
+      g_id: goodsId,
+      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+    }, function (data) {
+      dataInit();
+    })
+  })
+
+  //收藏按钮
+ $('.J_collection').on('tap', function () {
+    mui.post(getGoodsCollection(), {
+      g_id: goodsId,
+      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+    }, function (data) {
+      dataInit();
+    })
+  })
+
+  //购买输入框
+  $('.J_buyInput input').eq(0).on('tap',function() {
+    var num = parseInt($('.J_buyInput input').eq(1).val());
+    if(num>1){
+      num--;
+    }
+    $('.J_buyInput input').eq(1).val(num)
+
+  })
+  $('.J_buyInput input').eq(1).on('blur',function() {
+     var num = parseInt($('.J_buyInput input').eq(1).val());
+     num = num > 1 && num < 100 ? num :1;
+     $('.J_buyInput input').eq(1).val(num)
+  })
+  $('.J_buyInput input').eq(2).on('tap',function() {
+     var num = parseInt($('.J_buyInput input').eq(1).val());
+    if(num<100){
+      num++;
+    }
+    $('.J_buyInput input').eq(1).val(num)
+  })
 
 
 

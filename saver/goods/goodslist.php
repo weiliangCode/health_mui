@@ -24,10 +24,7 @@ function send_post($url, $post_data) {
 }
 
 //使用方法
-$post_data = array(
-    'username' => 'stclair2201',
-    'password' => 'handan'
-);
+$post_data = $_POST;
 
 echo  send_post('http://demo.lmqde.com/api/goods/goodslist', $post_data);
 
