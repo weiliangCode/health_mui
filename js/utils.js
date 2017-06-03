@@ -1,5 +1,5 @@
 var dev = "true",
-  devUrl = "http://172.19.5.104/health_mui/saver/",
+  devUrl = "http://localhost/health_mui/saver/",
   // devUrl = "http://shinehua.duapp.com/saver/",
   url = "http://demo.lmqde.com/api/";
 
