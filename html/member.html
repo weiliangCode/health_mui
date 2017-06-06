@@ -8,7 +8,9 @@
   <link href="../css/mui.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/base.css" />
   <link href="../css/member.css" rel="stylesheet" />
+  <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
   <script src="../js/mui.min.js"></script>
+  <script src="../js/utils.js"></script>
   <script src="../js/member.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -28,25 +30,25 @@
     <div class="mui-row orderNum">
       <div class="mui-col-sm-3 mui-col-xs-3">
         <a href="order.html?stateId=1">
-          <span>0</span>
+          <span class="J_beforePay">0</span>
           <span>待付款</span>
         </a>
       </div>
       <div class="mui-col-sm-3 mui-col-xs-3">
         <a href="order.html?stateId=2">
-          <span>0</span>
+          <span class="J_beforeShipping">0</span>
           <span>待发货</span>
         </a>
       </div>
       <div class="mui-col-sm-3 mui-col-xs-3">
         <a href="order.html?stateId=3">
-          <span>0</span>
+          <span class="J_hadComplete">0</span>
           <span>已发货</span>
         </a>
       </div>
       <div class="mui-col-sm-3 mui-col-xs-3">
         <a class="bordernone" href="order.html?stateId=4">
-          <span>0</span>
+          <span class="J_hadDeliver">0</span>
           <span>已完成</span>
         </a>
       </div>

@@ -53,6 +53,7 @@
   height: 102px;
   margin-top: 62px;
   text-align: center;
+  display:none;
 }
 
 .noOrder p{
@@ -68,4 +69,81 @@
   padding: 0;
   border: 1px solid #ff6600;
   color: #ff6600;
+}
+
+
+/*.goods{
+  display: block;
+}*/
+
+.goods .orderid{
+  color: #333333;
+  height: 37px;
+  line-height: 37px;
+  border-bottom: 1px solid #ddd;
+  margin-left: 10px;
+}
+
+.goods .orderid a{
+  color: #00a0f8;
+  float: right;
+  margin-right: 11px;
+}
+
+.goodsList{
+  overflow: hidden;
+}
+
+.goodsList .content div{
+  height: 40px;
+}
+.goodsList ul{
+  width: 100%;
+}
+.goodsList li{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding:15px 10px;
+}
+
+.goodsList .content{
+  width: 100%;
+  display: flex;
+}
+
+.goodsList .list_l{
+  width: 40px;
+  margin-right: 10px;
+}
+
+.goodsList .list_l img{
+  width: 100%;
+}
+
+.goodsList .list_m{
+  flex: 1;
+}
+
+.goodsList .list_m h3{
+  color:#333333;
+}
+
+.goodsList .list_m p{
+  color:#e4393c;
+  font-weight: 600;
+}
+
+
+
+.goodsList .list_r{
+  padding-left: 15px;
+  padding-right: 5px;
+  line-height: 40px;
+  border-left: 1px solid #ddd;
+  color: #999999;
+
+}
+
+.goodsList li p{
+  width: 100%;
 }

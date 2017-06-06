@@ -1,5 +1,5 @@
 var dev = "true",
-  devUrl = "http://172.19.5.104/health_mui/saver/",
+  devUrl = "http://localhost/health_mui/serve/",
   // devUrl = "http://shinehua.duapp.com/saver/",
   url = "http://demo.lmqde.com/api/";
 
@@ -50,5 +50,38 @@ function getUserCollection() {
     return devUrl + 'user/collection.php';
   else
     return url + 'user/collection'
+}
+
+//获得会员信息
+function getUsercenter() {
+  if (dev === "true")
+    return devUrl + 'user/usercenter.php';
+  else
+    return url + 'user/usercenter'
+}
+
+
+//获得订单详情
+function getOrder() {
+  if (dev === "true")
+    return devUrl + 'order/orderlist.php';
+  else
+    return url + 'order/status/orderlist'
+}
+
+//购物车的增删改查
+function getShoppingcart() {
+  if (dev === "true")
+    return devUrl + 'shoppingcart.php';
+  else
+    return url + 'shoppingcart'
+}
+ 
+//用户绑定手机
+function getUserbind() {
+  if (dev === "true")
+    return devUrl + 'user/bind.php';
+  else
+    return url + 'usr/bind'
 }
 

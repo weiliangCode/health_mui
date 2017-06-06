@@ -15,4 +15,20 @@ window.onload = function () {
         location.href = "../index.html";
     }
 
+
+    //获得订单信息
+    mui.post(getOrder(), {
+        status:stateId,
+        username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+    }, function (data) {
+        var obj = JSON.parse(data);
+        obj = obj.data.all_order_list;
+
+        if(obj.length < 1) {
+            $('.J_noOrder').css('display','block');
+            return;
+        } 
+        $('.J_noOrder').css('display','none');
+        console.log(obj);
+    })
 }

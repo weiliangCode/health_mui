@@ -8,6 +8,7 @@ mui.ready(function() {
   //初始化数据
   mui.post(getGoodslist(), {
   }, function (data) {
+      console.log(data);
       var goodsList = data.data.promotion;
       for(var i=0;i<goodsList.length; i++) {
         var str = '<li>';
