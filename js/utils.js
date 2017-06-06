@@ -60,6 +60,15 @@ function getUsercenter() {
     return url + 'user/usercenter'
 }
 
+//用户绑定手机
+function getUserbind() {
+  if (dev === "true")
+    return devUrl + 'user/bind.php';
+  else
+    return url + 'user/bind'
+}
+
+
 
 //获得订单详情
 function getOrder() {
@@ -77,11 +86,4 @@ function getShoppingcart() {
     return url + 'shoppingcart'
 }
  
-//用户绑定手机
-function getUserbind() {
-  if (dev === "true")
-    return devUrl + 'user/bind.php';
-  else
-    return url + 'usr/bind'
-}
 
