@@ -79,6 +79,33 @@ window.onload = function () {
   mui('.J_buyBtn').on('tap', ".l", function () {
     mui('.J_buy')[0].style.display = 'block';
     mui('.J_mask')[0].style.display = 'block';
+    mui('.J_butNet')[0].style.display = 'block';
+    mui('.J_cartNer')[0].style.display = 'none';
+  })
+
+  //加入购物车
+  mui('.J_buyBtn').on('tap', ".r", function () {
+    console.log(1111)
+    mui('.J_buy')[0].style.display = 'block';
+    mui('.J_mask')[0].style.display = 'block';
+    mui('.J_butNet')[0].style.display = 'none';
+    mui('.J_cartNer')[0].style.display = 'block';
+  })
+
+  mui('.J_buy').on('tap', '.J_cartNer', function () {
+    mui('.J_buy')[0].style.display = 'none';
+    mui('.J_mask')[0].style.display = 'none';
+
+    var num = $('.J_buyInput input').eq(1).val();
+    //加入购物车
+    $.post(getShoppingcart(), {
+      g_id: goodsId,
+      num: num,
+      operate: 'add',
+      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+    }, function (data) {
+      console.log(data);
+    })
   })
 
   //点击遮罩层
@@ -105,7 +132,7 @@ window.onload = function () {
   })
 
   //收藏按钮
- $('.J_collection').on('tap', function () {
+  $('.J_collection').on('tap', function () {
     mui.post(getGoodsCollection(), {
       g_id: goodsId,
       username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
@@ -115,22 +142,23 @@ window.onload = function () {
   })
 
   //购买输入框
-  $('.J_buyInput input').eq(0).on('tap',function() {
+  $('.J_buyInput input').eq(0).on('tap', function () {
     var num = parseInt($('.J_buyInput input').eq(1).val());
-    if(num>1){
+    if (num > 1) {
       num--;
     }
     $('.J_buyInput input').eq(1).val(num)
 
   })
-  $('.J_buyInput input').eq(1).on('blur',function() {
-     var num = parseInt($('.J_buyInput input').eq(1).val());
-     num = num > 1 && num < 100 ? num :1;
-     $('.J_buyInput input').eq(1).val(num)
+  $('.J_buyInput input').eq(1).on('blur', function () {
+    var num = parseInt($('.J_buyInput input').eq(1).val());
+    num = num > 1 && num < 100 ? num : 1;
+    $('.J_buyInput input').eq(1).val(num)
   })
-  $('.J_buyInput input').eq(2).on('tap',function() {
-     var num = parseInt($('.J_buyInput input').eq(1).val());
-    if(num<100){
+
+  $('.J_buyInput input').eq(2).on('tap', function () {
+    var num = parseInt($('.J_buyInput input').eq(1).val());
+    if (num < 100) {
       num++;
     }
     $('.J_buyInput input').eq(1).val(num)

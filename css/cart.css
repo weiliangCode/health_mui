@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   z-index: 999;
+  background: #fff;
 }
 
 .top li{
@@ -32,10 +33,103 @@
 
 .AppFoort{
   width: 100%;
-  position: absolute;
+  /*position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 999;*/
   border-top: 2px solid #ddd;
+  margin-bottom: 40px;
  
+}
+
+
+.goods{
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  overflow-y:scroll;
+  display: block;
+  background: #fff;
+}
+
+.goods .orderid{
+  color: #333333;
+  height: 37px;
+  line-height: 37px;
+  border-bottom: 1px solid #ddd;
+  margin-left: 10px;
+}
+
+.goods .orderid a{
+  color: #00a0f8;
+  float: right;
+  margin-right: 11px;
+}
+
+.goodsList{
+  margin-left: 10px;
+}
+
+.goodsList li{
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  padding: 28px 0;
+}
+
+.goodsList li .radio{
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+}
+
+.goodsList li .radio img{
+  width: 100%;
+  height: 100%;
+}
+
+.goodsList .list_l{
+  width: 60px;
+  margin-right: 10px;
+}
+
+.goodsList .list_l img{
+  width: 100%;
+}
+
+
+.goodsList .list_m{
+  flex: 2;
+  color: #000;
+}
+
+.goodsList .list_r{
+  flex: 1;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.goodsList .list_r .price{
+  color:#ff6600;
+}
+
+.sumPrice{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  height: 39px;
+  line-height: 39px;
+  padding-left: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+
+.sumPrice button{
+  background: #ff6600;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  float: right;
+  margin-top: 4px;
 }

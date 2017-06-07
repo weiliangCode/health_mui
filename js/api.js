@@ -1,6 +1,6 @@
-var dev = "true",
+var dev = "false",
   devUrl = "http://localhost/health_mui/serve/",
-  // devUrl = "http://shinehua.duapp.com/saver/",
+  // devUrl = "http://shinehua.duapp.com/serve/",
   url = "http://demo.lmqde.com/api/";
 
 
