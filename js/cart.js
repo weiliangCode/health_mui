@@ -8,11 +8,11 @@ window.onload = function () {
   var stateList = document.querySelector(".J_topState").getElementsByTagName("li");
   stateList[stateId].className = "active";
   document.querySelector("title").innerHTML = titleArr[stateId];
-  if (stateId == '0') {
-    cartData();
-  } else {
-    recordData();
-  }
+  // if (stateId == '0') {
+  //   cartData();
+  // } else {
+  //   recordData();
+  // }
 
 
   //获得购物车数据
@@ -29,7 +29,7 @@ window.onload = function () {
       }
       for (var index in obj) {
         var item = obj[index];
-        var str = '<li>';
+        var str = '<li class="item">';
         str += '<button class="radio"><img src="../images/cart/radio_true.png" alt=""></button>';
         str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>';
         str += '<div class="list_m">';

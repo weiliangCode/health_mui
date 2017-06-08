@@ -68,10 +68,19 @@
 }
 
 .goodsList{
-  margin-left: 10px;
+  background: #eee;
+  overflow: hidden;
 }
 
 .goodsList li{
+  margin-bottom: 5px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+  
+}
+
+.goodsList item{
   border-bottom: 1px solid #ddd;
   display: flex;
   padding: 28px 0;
