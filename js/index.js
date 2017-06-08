@@ -5,6 +5,11 @@ mui.ready(function() {
     document.querySelector(".J_fixedTop").style.display = "none";
   }
 
+  //延时5秒关闭J_fixedTop
+  setTimeout(function(){
+    $('.J_fixedTop').css('display','none');
+  },5000)
+
   //初始化数据
   mui.post(getGoodslist(), {
   }, function (data) {

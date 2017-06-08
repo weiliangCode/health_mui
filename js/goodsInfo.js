@@ -8,6 +8,11 @@ window.onload = function () {
   var goodsId = location.search;
   goodsId = goodsId.split("=")[1];
 
+  //延时5秒关闭J_fixedTop
+  setTimeout(function () {
+    $('.J_fixedTop').css('display', 'none');
+  }, 5000)
+
   //初始化数据
   function dataInit() {
     mui.post(getGoodsInfo(), {

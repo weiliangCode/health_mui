@@ -79,7 +79,7 @@
   display: none;
 }
 
-.goods .orderid{
+.orderid{
   color: #333333;
   height: 37px;
   line-height: 37px;
@@ -87,17 +87,27 @@
   margin-left: 10px;
 }
 
-.goods .orderid a{
+.orderid a{
   color: #00a0f8;
   float: right;
   margin-right: 11px;
 }
 
 .goodsList{
-  margin-left: 10px;
+  overflow: hidden;
+  background: #eee;
+}
+ 
+.goodsList li{
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  background: #fff;
 }
 
-.goodsList li{
+.goodsList .item{
   border-bottom: 1px solid #ddd;
   display: flex;
   padding: 28px 0;
@@ -130,7 +140,6 @@
 }
 
 .sumPrice{
-  border-bottom: 1px solid #ddd;
   height: 39px;
   line-height: 39px;
   padding-left: 10px;
@@ -143,4 +152,9 @@
   border-radius: 4px;
   float: right;
   margin-top: 4px;
+}
+
+.sumPrice .right{
+  float: right;
+  margin-right: 10px;
 }
