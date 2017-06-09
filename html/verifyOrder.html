@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>订单确认</title>
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link href="../css/verifyOrder.css" rel="stylesheet" />
+  <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/verifyOrder.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <p class="orderNo">225646425656747456555</p>
+  <p class="price">总额：<span>1498元</span></p>
+  <h3 class="title">选择支付方式</h3>
+  <ul class="list">
+    <li>
+      <img src="../images/verifyOrder/wx.png" alt="">
+      <p>微信 付款</p>
+      <input type="radio" name="mode" value="">
+    </li>
+    <li>
+      <img src="../images/verifyOrder/zf.png" alt="">
+      <p>支付宝 付款</p>
+      <input type="radio" name="mode" value="">
+    </li>
+  </ul>
+
+  <div class="clearingBtn">
+    <button>确认支付</button>
+  </div>
+
+  
+</body>
+
+</html>

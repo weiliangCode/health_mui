@@ -87,3 +87,30 @@ function getShoppingcart() {
 }
  
 
+//获得地址
+function getSite() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'area/areainfo'
+}
+
+
+//获得openID
+function getOpenId() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'wechat/useropenid'
+
+}
+
+
+//添加收货地址
+function getAddaddress() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'user/addaddress'
+
+}

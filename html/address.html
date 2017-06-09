@@ -8,7 +8,9 @@
   <link href="../css/mui.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/base.css" />
   <link href="../css/address.css" rel="stylesheet" />
+  <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
   <script src="../js/mui.min.js"></script>
+  <script src="../js/api.js"></script>
   <script src="../js/address.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -16,48 +18,48 @@
   <form class="useInfo"> 
     <p>
       <span>收货人</span>
-      <input type="text" name="storeName" placeholder="姓名">
+      <input type="text" name="storeName" placeholder="姓名" class="J_name">
     </p>
     <p>
       <span>联系电话</span>
-      <input type="text" name="storeName" placeholder="手机或固定电话">
+      <input type="text" name="storeName" placeholder="手机或固定电话" class="J_phone">
     </p>
     <p>
       <span>选择地区</span>
-      <select name="dizi">
+      <select name="dizi" class="province J_province">
           <option value="深圳">选择省份</option>
-          <option value="深圳">广东省</option>
+          <!--<option value="深圳">广东省</option>
           <option value="北京">江西省</option>
           <option value="上海">河北省</option>
-          <option value="广州">辽宁省</option>
+          <option value="广州">辽宁省</option>-->
       </select>
-      <select name="dizi">
+      <select name="dizi" class="J_city">
           <option value="深圳">城市</option>
-          <option value="深圳">深圳</option>
+          <!--<option value="深圳">深圳</option>
           <option value="北京">北京</option>
           <option value="上海">上海</option>
-          <option value="广州">广州</option>
+          <option value="广州">广州</option>-->
       </select>
-      <select name="dizi">
+      <select name="dizi" class="J_district">
           <option value="深圳">区县</option>
-          <option value="深圳">宝安区</option>
+          <!--<option value="深圳">宝安区</option>
           <option value="北京">龙岗区</option>
           <option value="上海">南山区</option>
-          <option value="广州">龙华新区</option>
+          <option value="广州">龙华新区</option>-->
       </select>
     </p>
     <p>
       <span>详情地区</span>
-      <input type="text" name="storeName" placeholder="街道门牌信息">
+      <input type="text" name="storeName" placeholder="街道门牌信息" class="J_addInfo">
     </p>
     <p>
       <span>邮政编码</span>
-      <input type="text" name="storeName" placeholder="邮政编码">
+      <input type="text" name="storeName" placeholder="邮政编码" class="J_postalcode">
     </p>
   </form>
   
   <div class="bottom">
-    <button type="button">保存</button>
+    <button type="button" class="J_submit">保存</button>
     <button type="button">取消</button>
   </div>
 </body>

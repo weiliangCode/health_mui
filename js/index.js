@@ -10,6 +10,15 @@ mui.ready(function() {
     $('.J_fixedTop').css('display','none');
   },5000)
 
+
+//获得openID
+  mui.post(getOpenId(), {
+  }, function (data) {
+    
+    alert(data.data.openid);
+    alert(JSON.stringify(data));
+  })
+
   //初始化数据
   mui.post(getGoodslist(), {
   }, function (data) {
