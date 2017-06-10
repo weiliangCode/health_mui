@@ -69,6 +69,7 @@ window.onload = function () {
       phone: phone
     }, function (data) {
       console.log(data);
+      location.href = '../html/obligationOrder.html';
     })
 
 

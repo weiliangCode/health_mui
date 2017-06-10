@@ -50,7 +50,7 @@
   overflow-y:scroll;
   display: block;
   background: #fff;
-  display: none;
+  /*display: none;*/
 }
 
 .goods .orderid{
@@ -67,9 +67,10 @@
   margin-right: 11px;
 }
 
+/*商品列表 start*/
 .goodsList{
   background: #eee;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .goodsList li{
@@ -122,6 +123,8 @@
 .goodsList .list_r .price{
   color:#ff6600;
 }
+
+/*商品列表 :end*/
 
 .sumPrice{
   width: 100%;

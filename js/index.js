@@ -11,13 +11,13 @@ mui.ready(function() {
   },5000)
 
 
-//获得openID
-  mui.post(getOpenId(), {
-  }, function (data) {
+// //获得openID
+//   mui.post(getOpenId(), {
+//   }, function (data) {
     
-    alert(data.data.openid);
-    alert(JSON.stringify(data));
-  })
+//     alert(data.data.openid);
+//     alert(JSON.stringify(data));
+//   })
 
   //初始化数据
   mui.post(getGoodslist(), {

@@ -80,12 +80,15 @@ window.onload = function () {
   })
 
 
+  //标志购买或加入购物车状态
+  var flog = true;
   //立即购买
   mui('.J_buyBtn').on('tap', ".l", function () {
     mui('.J_buy')[0].style.display = 'block';
     mui('.J_mask')[0].style.display = 'block';
-    mui('.J_butNet')[0].style.display = 'block';
-    mui('.J_cartNer')[0].style.display = 'none';
+    // mui('.J_butNet')[0].style.display = 'block';
+    // mui('.J_cartNer')[0].style.display = 'none';
+    flog = true;
   })
 
   //加入购物车
@@ -93,24 +96,33 @@ window.onload = function () {
     console.log(1111)
     mui('.J_buy')[0].style.display = 'block';
     mui('.J_mask')[0].style.display = 'block';
-    mui('.J_butNet')[0].style.display = 'none';
-    mui('.J_cartNer')[0].style.display = 'block';
+    // mui('.J_butNet')[0].style.display = 'none';
+    // mui('.J_cartNer')[0].style.display = 'block';
+    flog = false;
   })
 
-  mui('.J_buy').on('tap', '.J_cartNer', function () {
+  //点击下一步
+  mui('.J_buy').on('tap', '.J_butNet', function () {
     mui('.J_buy')[0].style.display = 'none';
     mui('.J_mask')[0].style.display = 'none';
 
     var num = $('.J_buyInput input').eq(1).val();
-    //加入购物车
-    $.post(getShoppingcart(), {
-      g_id: goodsId,
-      num: num,
-      operate: 'add',
-      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
-    }, function (data) {
-      console.log(data);
-    })
+
+    if(flog) {
+      location.href = '../html/address.html'
+
+    } else {
+      //加入购物车
+      $.post(getShoppingcart(), {
+        g_id: goodsId,
+        num: num,
+        operate: 'add',
+        username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+      }, function (data) {
+        console.log(data);
+      })
+    }
+
   })
 
   //点击遮罩层
