@@ -11,9 +11,9 @@ window.onload = function () {
       if(obj) {
         str = '<div class="site">';
         str += '<div class="left">';
-        str += '<p>张三，13430519800</p>';
-        str += '<p>广东省 深圳市 南山区</p>';
-        str += '<p>188号</p>';
+        str += '<p>' + obj.to_user + '，' + obj.phone + '</p>';
+        str += '<p>' + obj.pathstr + '</p>';
+        str += '<p>' + obj.detail_address + '</p>';
         str += '</div>';
         str += '<div class="right">';
         str += '<button class="J_alterBtn">修改</button>';
@@ -33,7 +33,7 @@ window.onload = function () {
 
   //修改地址
   $('.J_ems').on('click','.J_alterBtn', function() {
-    location.href = '../html/address.html'
+    location.href = '../html/deliver_address.html'
   })
 
   //添加地址

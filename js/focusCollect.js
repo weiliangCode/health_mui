@@ -9,8 +9,9 @@ window.onload = function () {
 
     //初始化数据
     if(stateId === 0) {
+        var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
         mui.post(getUserNotice(), {
-            username: username
+            username: opendid
         }, function (data) {
             var obj = data.data.notice_list;
             for(var index in obj) {
@@ -32,8 +33,9 @@ window.onload = function () {
         }, 'json'
         );
     } else {
+         var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
          mui.post(getUserCollection(), {
-            username: username
+            username: opendid
         }, function (data) {
              var obj = data.data.collection_list;
              console.log(obj);

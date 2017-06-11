@@ -9,7 +9,7 @@ mui.ready(function () {
         console.log(data);
         var obj = data.data.default_address;
         if (obj) {
-            var str = '<li class="mui-table-view-cell">';
+            var str = '<li class="mui-table-view-cell J_item" data="'+ obj.id + '">';
             str += '<p>';
             str += '<span class="left">' + obj.to_user + '</span>';
             str += '<span class="right">' + obj.phone + '</span>';
@@ -21,7 +21,7 @@ mui.ready(function () {
         var other = data.data.other_address;
         for (var index in other) {
            var item = other[index];
-           var str = '<li class="mui-table-view-cell">';
+           var str = '<li class="mui-table-view-cell J_item" data="' + item.id+ '">';
             str += '<p>';
             str += '<span class="left">' + item.to_user + '</span>';
             str += '<span class="right">' + item.phone + '</span>';
@@ -31,6 +31,13 @@ mui.ready(function () {
             $('.J_list').append($(str));
         }
 
+    })
+
+    //选择地址
+    $('.J_list').on('tap', '.J_item', function(){
+        var index = $(this).attr('data');
+        console.log(index);
+        location.href = '../html/obligationOrder.html'
     })
 
 })

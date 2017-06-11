@@ -39,7 +39,7 @@ window.onload = function () {
 
   //点击“我要分销” 按钮
   document.querySelector('.J_applyBtn').onclick = function () {
-    location.href = "apply.html";
+    location.href = "prompt.html";
   }
 
   //点击“进入店铺” 按钮
@@ -93,7 +93,6 @@ window.onload = function () {
 
   //加入购物车
   mui('.J_buyBtn').on('tap', ".r", function () {
-    console.log(1111)
     mui('.J_buy')[0].style.display = 'block';
     mui('.J_mask')[0].style.display = 'block';
     // mui('.J_butNet')[0].style.display = 'none';
@@ -108,8 +107,20 @@ window.onload = function () {
 
     var num = $('.J_buyInput input').eq(1).val();
 
+    //生成订单
     if(flog) {
-      location.href = '../html/address.html'
+
+      var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+      $.post(getAddress(), {
+        username: opendid
+      }, function (data) {
+        var obj = data.data.default_address;
+        if(obj) {
+          location.href = '../html/obligationOrder.html';
+        } else {
+          location.href = '../html/address.html';
+        }
+      })
 
     } else {
       //加入购物车
