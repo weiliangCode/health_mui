@@ -17,13 +17,13 @@ window.onload = function () {
 
     //获得订单信息
     stateId = parseInt(stateId) > 0 ? stateId - 1 : '*';
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
     $.post(getOrder(), {
         status: stateId,
-        username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+        username: opendid
     }, function (data) {
-        // var obj = JSON.parse(data);
-        var obj = data;
-        obj = obj.data.all_order_list;
+        var obj = data.data.all_order_list;
+        console.log(obj);
         // $('.J_goodsList').html('');
         if (obj.length < 1) {
             $('.J_noOrder').css('display', 'block');
@@ -61,7 +61,9 @@ window.onload = function () {
             str += '<p class="orderid">';
             str += '订单号：';
             str += '<span>' + item.order_no+ '</span>';
-            str += '<a href="javascript:;">取消</a>';
+            if(item.status == '0') {
+                str += '<a href="javascript:;">取消</a>';
+            }
             str += '</p>';
             str += '<div class="item">';
             str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>';
@@ -77,7 +79,7 @@ window.onload = function () {
             str += '总价：￥';
             str += '<span>2222.00</span>';
             if(item.status == '0') {
-                str += '<button class="J_buyBtn">付款</button>';
+                str += '<button class="J_buyBtn" data="'+item.order_no +'">付款</button>';
             } else {
                 str += '<span class="right">已付款</span>';    
             }
@@ -86,6 +88,15 @@ window.onload = function () {
             $('.J_goodsList').append($(str));
         }
     }
+
+
+    //点击过付款
+    $('.J_goodsList').on('tap','.J_buyBtn',function(){
+        var order_no = $(this).attr('data');
+        // console.log(order_no);
+        location.href = "obligationOrder.html?order_no=" + order_no;
+        
+    })
 
 
 }

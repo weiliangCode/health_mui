@@ -2,8 +2,9 @@ mui.ready(function() {
   mui.init();
 
   //获得会员信息
+  var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
   $.post(getUsercenter(), {
-    username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+    username: opendid
   }, function (data) {
     if(data) {
       // var obj = JSON.parse(data);

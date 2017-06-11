@@ -1,0 +1,158 @@
+.content{
+  background: #eee;
+}
+
+.goods{
+  padding: 0 10px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.title{
+  height: 42px;
+  border-bottom: 1px solid #ddd;
+  line-height: 42px;
+}
+
+.goodsList .item{
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  padding: 28px 0;
+}
+
+
+.goodsList .list_l{
+  width: 60px;
+  margin-right: 10px;
+}
+
+.goodsList .list_l img{
+  width: 100%;
+}
+
+
+.goodsList .list_m{
+  flex: 2;
+  color: #000;
+}
+
+.goodsList .list_r{
+  flex: 1;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.goodsList .list_r .price{
+  color:#ff6600;
+}
+
+.sumPrice input{
+  margin-top: 8px;
+}
+
+.goodsList .numPrice{
+  float: right;
+  color: #ff6600;
+}
+
+.ems{
+  background: #fff;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.ems .top{
+  height: 46px;
+  line-height: 46px;
+  border-bottom: 1px solid #ddd;
+  padding:0 10px;
+}
+
+.ems .top button{
+  width: 64px;
+  height: 26px;
+  border: 1px solid #ff6600;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #ff6600;
+  text-align: center;
+  padding: 0;
+}
+
+/*地址*/
+.ems .address{
+  height: 80px;
+  border-bottom: 1px solid #ddd;
+  padding: 0 10px;
+}
+
+.ems .site{
+  padding: 10px 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
+
+.ems .site .left{
+  flex: 1;
+}
+
+.ems .site .left p{
+  line-height: 24px;
+}
+.ems .site .right{
+  width: 46px;
+}
+
+.ems .site .right button{
+  width: 46px;
+  height: 24px;
+  border: 1px solid #ddd;
+  background: #eeeeee;
+  color: #999999;
+  padding: 0;
+}
+
+
+
+.ems .address button{
+  height: 54px;
+  width: 100%;
+  border:1px solid #ddd;
+  margin-top: 12px;
+  border-radius: 6px;
+  text-align: center;
+  padding: 0;
+  color: #0077dd;
+}
+
+.clearing{
+  height: 66px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: 10px;
+  background: #fff;
+}
+
+.clearing p{
+  text-align: center;
+  line-height: 33px;
+}
+
+.clearing p:nth-child(2){
+  color:  #ff6600;
+}
+
+.clearingBtn{
+  padding: 0 10px;
+}
+
+.clearingBtn button{
+  height: 40px;
+  margin: 20px 0;
+  background: #06bf04;
+  color:  #fff;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+}
+

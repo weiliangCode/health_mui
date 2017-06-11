@@ -112,5 +112,12 @@ function getAddaddress() {
     return devUrl + '';
   else
     return url + 'user/addaddress'
+}
 
+//获得地址
+function getAddress() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'user/addresslist'
 }

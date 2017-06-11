@@ -60,9 +60,11 @@ window.onload = function () {
       addInfo = $('.J_addInfo').val(),
       postalcode = $('.J_postalcode').val();
 
+      var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+
     $.post(getAddaddress(), {
       path: p1 + ',' + p2 + ',' + p3 + ',',
-      username: 'outktv28lv2UjvPTeT1TvKRRx0tc',
+      username: opendid,
       detail_address: '188号',
       to_user: name,
       post_num: postalcode,
@@ -74,6 +76,11 @@ window.onload = function () {
 
 
 
+  })
+
+  //取消
+  $('.J_cancel').on('tap',function () {
+    window.history.go(-1)
   })
 }
 

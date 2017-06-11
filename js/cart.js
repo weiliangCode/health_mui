@@ -17,9 +17,10 @@ window.onload = function () {
 
   //获得购物车数据
   function cartData() {
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
     mui.post(getShoppingcart(), {
       operate: 'list',
-      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+      username: opendid
 
     }, function (data) {
       var obj = data.data.shopping_cart;
@@ -47,9 +48,10 @@ window.onload = function () {
 
   //获得购物记录数据
   function recordData() {
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
     mui.post(getOrder(), {
       status: '*',
-      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+      username: opendid
 
     }, function (data) {
       console.log(data);
@@ -80,10 +82,11 @@ window.onload = function () {
 
   //删除购物车商品
   function delgoods() {
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
     mui.post(getShoppingcart(), {
       g_id: '981',
       operate: 'del',
-      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+      username: opendid
 
     }, function (data) {
       console.log(data);
@@ -95,11 +98,12 @@ window.onload = function () {
 
   //编辑购物车商品
   function editGoods() {
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
     mui.post(getShoppingcart(), {
       g_id: '941',
       num: '50',
       operate: 'edit',
-      username: 'outktv28lv2UjvPTeT1TvKRRx0tc'
+      username: opendid
 
     }, function (data) {
       console.log(data);
