@@ -78,23 +78,26 @@
   background: #fff;
   border-bottom: 1px solid #ddd;
   padding-left: 10px;
-  
 }
 
-.goodsList item{
+/*购物车列表*/
+.goodsList .item{
   border-bottom: 1px solid #ddd;
   display: flex;
-  padding: 28px 0;
+  padding-top: 28px;
+  padding-bottom: 28px;
 }
 
-.goodsList li .radio{
+.goodsList .item .radio{
   width: 20px;
   height: 20px;
   padding: 0;
   border: none;
+  margin-top: 6px;
+  margin-right: 10px;
 }
 
-.goodsList li .radio img{
+.goodsList .item .radio img{
   width: 100%;
   height: 100%;
 }
@@ -124,7 +127,6 @@
   color:#ff6600;
 }
 
-/*商品列表 :end*/
 
 .sumPrice{
   width: 100%;
@@ -136,6 +138,7 @@
   bottom: 0;
   left: 0;
   background: #fff;
+  display: none;
 }
 
 .sumPrice button{
@@ -145,4 +148,86 @@
   border-radius: 4px;
   float: right;
   margin-top: 4px;
+}
+
+/*购物记录列表*/
+.item_record .price_record{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  height: 39px;
+  line-height: 39px;
+  padding-left: 10px;
+  background: #fff;
+}
+
+.price_record button{
+  background: #ff6600;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  float: right;
+  margin-top: 4px;
+}
+
+.edit{
+  border-radius: 5px;
+  width: 77px;
+  float: right;
+}
+
+.edit input{
+  width: 23px;
+  height: 19px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  float: left;
+  padding: 0;
+  text-align: center;
+  background: #f2f2f2;
+  color: #666666;
+  margin-top: 5px;
+}
+
+.edit input:nth-child(2) {
+  background: #fff;
+  color: #000000;
+}
+
+
+
+.edit_bottom{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  height: 39px;
+  line-height: 39px;
+  padding-left: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  color: #ed5050;
+}
+
+.edit_bottom .radio{
+  width: 20px;
+  height: 20px;
+  border: none;
+  padding: 0;
+  margin-top: 9px;
+}
+
+.edit_bottom .radio img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.edit_bottom .clear{
+  background: #ed5050;
+  border: 1px solid #b93232;
+  color: #fff;
+  border-radius: 4px;
+  float: right;
+  margin-top: 4px;
+  margin-right: 10px;
 }
