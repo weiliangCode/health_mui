@@ -24,6 +24,7 @@ window.onload = function () {
       $('.J_goodsNum').html(obj.goods_num);
       $(".J_notice").html("关注 （" + obj.notice_num + "）");
       $(".J_collection").html("收藏（" + obj.collection_num + "）");
+      $('.J_loading').css('display', 'none');
     }, 'json'
     );
   }
@@ -108,14 +109,13 @@ window.onload = function () {
     var num = $('.J_buyInput input').eq(1).val();
 
     //生成订单
-    if(flog) {
-
+    if (flog) {
       var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
       $.post(getAddress(), {
         username: opendid
       }, function (data) {
         var obj = data.data.default_address;
-        if(obj) {
+        if (obj) {
           location.href = '../html/obligationOrder.html';
         } else {
           location.href = '../html/address.html';

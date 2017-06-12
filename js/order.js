@@ -33,7 +33,7 @@ window.onload = function () {
         $('.J_noOrder').css('display', 'none');
         $('.J_goods').css('display', 'block');
         CreateShopGoogsList(obj);
- 
+        $('.J_loading').css('display', 'none');
     })
 
     //创建普通商品列表

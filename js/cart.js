@@ -15,7 +15,7 @@ window.onload = function () {
   }
 
 
-  //获得购物车数据
+  //刷新购物车列表数据
   function cartData() {
     $('.J_orderid').css('display', 'block');
     $('.J_sumPrice').css('display', 'block');
@@ -27,7 +27,6 @@ window.onload = function () {
     }, function (data) {
       $('.J_goodsList').html('');
       var obj = data.data.shopping_cart;
-      console.log(obj);
       if (obj) {
         $('.J_goods').css('display', 'block');
       }
@@ -47,10 +46,11 @@ window.onload = function () {
         $('.J_goodsList').append($(str));
       }
       total();
+      $('.J_loading').css('display','none');
     })
   }
 
-  //进入编辑状态
+  //刷新编辑状态列表数据
   function edit() {
     $('.J_orderid').css('display', 'block');
     $('.J_sumPrice').css('display', 'none');
@@ -85,10 +85,11 @@ window.onload = function () {
         str += '</li>';
         $('.J_goodsList').append($(str));
       }
+      $('.J_loading').css('display','none');
     })
   }
 
-  //获得购物记录数据
+  //刷新购物记录数据列表数据
   function recordData() {
     $('.J_orderid').css('display', 'none');
     $('.J_sumPrice').css('display', 'none');
@@ -133,8 +134,11 @@ window.onload = function () {
         str += '</li>';
         $('.J_goodsList').append($(str));
       }
+      $('.J_loading').css('display','none');
     })
   }
+
+
 
   //点击了付款
   $('.J_goodsList').on('tap', '.J_buyBtn', function () {
@@ -142,6 +146,20 @@ window.onload = function () {
     // console.log(order_no);
     location.href = "obligationOrder.html?order_no=" + order_no;
 
+  })
+
+  $('.J_sumPrice').on('tap', '.J_buyBtn', function() {
+     var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+      $.post(getAddress(), {
+        username: opendid
+      }, function (data) {
+        var obj = data.data.default_address;
+        if(obj) {
+          location.href = '../html/obligationOrder.html';
+        } else {
+          location.href = '../html/address.html';
+        }
+      })
   })
 
   //点击了商品单选框
@@ -160,8 +178,9 @@ window.onload = function () {
     }
   })
 
-  //点击了编辑按钮
+  //点击了编辑/完成按钮
   $('.J_edit').on('tap', function () {
+    $('.J_loading').css('display','block');
     if ($(this).attr('data') == 'edit') {
       $(this).html('完成');
       $(this).attr('data', 'fulfill');
@@ -169,48 +188,23 @@ window.onload = function () {
     } else {
       $(this).html('编辑');
       $(this).attr('data', 'edit');
-
-      
+ 
       var listArr = $('.J_goodsList li');
+      var t1 = listArr.length;
+      var t2 = 0;
       for(var i=0; i<listArr.length; i++) {
         var g_id = listArr.eq(i).attr('data');
         var num = parseInt(listArr.eq(i).find('.J_val').val());
-        editGoods(g_id,num);
+        editGoods(g_id,num,function() {
+          t2++;
+          if(t2 == t1) {
+            cartData();
+          }
+        });
       }
-      cartData();
+      
     }
   })
-
-
-
-
-  //删除购物车商品
-  function delgoods(g_id) {
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
-    mui.post(getShoppingcart(), {
-      g_id: g_id,
-      operate: 'del',
-      username: opendid
-    }, function (data) {
-      console.log(data);
-    })
-  }
-
-  //编辑购物车商品
-  function editGoods(g_id,num) {
-    console.log(g_id)
-    console.log(num);
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
-    mui.post(getShoppingcart(), {
-      g_id: g_id,
-      num: num,
-      operate: 'edit',
-      username: opendid
-
-    }, function (data) {
-      console.log(data);
-    })
-  }
 
   //编辑输入框
   $('.J_goodsList').on('tap', '.J_sub',function () {
@@ -247,5 +241,31 @@ window.onload = function () {
       totalNum += (price * num);
     }
     $('.J_total').html(totalNum);
+  }
+
+  //删除购物车商品
+  function delgoods(g_id) {
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    mui.post(getShoppingcart(), {
+      g_id: g_id,
+      operate: 'del',
+      username: opendid
+    }, function (data) {
+      console.log(data);
+    })
+  }
+
+  //编辑购物车商品
+  function editGoods(g_id,num,callback) {
+    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    mui.post(getShoppingcart(), {
+      g_id: g_id,
+      num: num,
+      operate: 'edit',
+      username: opendid
+
+    }, function (data) {
+      callback();
+    })
   }
 }
