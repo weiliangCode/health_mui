@@ -1,4 +1,5 @@
 window.onload = function () {
+  var goods = {};
 
   //初始化数据
   mui.init();
@@ -32,7 +33,9 @@ window.onload = function () {
       }
       for (var index in obj) {
         var item = obj[index];
-        var str = '<li class="item">';
+        goods[item.goods_id] = item;
+        console.log(item);
+        var str = '<li class="item" data="' + item.goods_id + '">';
         str += '<button class="radio J_radio" data="true"><img src="../images/cart/radio_true.png" alt=""></button>';
         str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>';
         str += '<div class="list_m">';
@@ -138,27 +141,50 @@ window.onload = function () {
     })
   }
 
-
-
   //点击了付款
   $('.J_goodsList').on('tap', '.J_buyBtn', function () {
     var order_no = $(this).attr('data');
     // console.log(order_no);
     location.href = "obligationOrder.html?order_no=" + order_no;
-
   })
 
+  //购物车结算
   $('.J_sumPrice').on('tap', '.J_buyBtn', function() {
+     var listArr = $('.J_goodsList li');
+    var totalNum = 0;
+    var g_ids = '';
+    var newGoods = [];
+    console.log(goods);
+    for(var i=0; i<listArr.length; i++) {
+      if(listArr.eq(i).find('.J_radio').attr('data') == 'true') {
+        var gId = listArr.eq(i).attr('data');
+        g_ids += gId + ',';
+        newGoods.push(goods[gId]);
+      }
+    }
      var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
       $.post(getAddress(), {
         username: opendid
       }, function (data) {
         var obj = data.data.default_address;
+        var url = '';
+        var address_id = '';
         if(obj) {
-          location.href = '../html/obligationOrder.html';
+          url = '../html/obligationOrder.html';
+          address_id = obj.id
         } else {
-          location.href = '../html/address.html';
+          url = '../html/address.html';
         }
+         var date = new Date();
+          var orderId = date.getTime();
+          var obj = {
+            username:opendid,
+            g_ids: g_ids,
+            address_id:address_id,
+            goods: newGoods
+          }
+          localStorage.setItem(orderId,JSON.stringify(obj));
+          location.href = url + '?orderId=' + orderId;
       })
   })
 
@@ -171,6 +197,7 @@ window.onload = function () {
     } else if ($(this).attr('data') == 'true') {
       $(this).find('img').attr('src', '../images/cart/radio_false.png');
       $(this).attr('data', 'false')
+      total();
     } else {
       $(this).find('img').attr('src', '../images/cart/radio_true.png')
       $(this).attr('data', 'true');
@@ -236,9 +263,11 @@ window.onload = function () {
     var listArr = $('.J_goodsList li');
     var totalNum = 0;
     for(var i=0; i<listArr.length; i++) {
-      var price = parseFloat(listArr.eq(i).find('.J_price').html());
-      var num = parseInt(listArr.eq(i).find('.J_num').html());
-      totalNum += (price * num);
+      if(listArr.eq(i).find('.J_radio').attr('data') == 'true') {
+        var price = parseFloat(listArr.eq(i).find('.J_price').html());
+        var num = parseInt(listArr.eq(i).find('.J_num').html());
+        totalNum += (price * num);
+      }
     }
     $('.J_total').html(totalNum);
   }

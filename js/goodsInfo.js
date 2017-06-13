@@ -1,7 +1,7 @@
 window.onload = function () {
   mui.init();
 
-  // document.querySelector(".J_fixedTopClrear").onclick = function(){
+  var goodsInfo = {};  // document.querySelector(".J_fixedTopClrear").onclick = function(){
   //   document.querySelector(".J_fixedTop").style.display = "none";
   // }
 
@@ -19,6 +19,7 @@ window.onload = function () {
       g_id: goodsId
     }, function (data) {
       var obj = data.data.goods_info;
+      goodsInfo = obj;
       $('.J_title').html(obj.goods_name);
       $('.J_price').html(obj.goods_price);
       $('.J_goodsNum').html(obj.goods_num);
@@ -115,11 +116,27 @@ window.onload = function () {
         username: opendid
       }, function (data) {
         var obj = data.data.default_address;
-        if (obj) {
-          location.href = '../html/obligationOrder.html';
+        var url = '';
+        var address_id = '';
+        if(obj) {
+          url = '../html/obligationOrder.html';
+          address_id = obj.id;
         } else {
-          location.href = '../html/address.html';
+          url = '../html/address.html';
         }
+        var date = new Date();
+        var orderId = date.getTime();
+        var goodArr = [];
+        goodArr.push(goodsInfo);
+        var obj = {
+          username:opendid,
+          g_ids: goodsInfo.goods_id,
+          address_id:address_id,
+          num: num,
+          goods: goodArr
+      }
+      localStorage.setItem(orderId,JSON.stringify(obj));
+      location.href = url + '?goodsOrderId=' + orderId;
       })
 
     } else {

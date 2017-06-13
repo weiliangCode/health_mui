@@ -1,6 +1,6 @@
 window.onload = function () {
   mui.init();
-
+  var urldata = location.search;
   //获得省份
   $.post(getSite(), {
   }, function (data) {
@@ -71,7 +71,7 @@ window.onload = function () {
       phone: phone
     }, function (data) {
       console.log(data);
-      location.href = '../html/obligationOrder.html';
+      location.href = '../html/obligationOrder.html' + urldata;
     })
 
 

@@ -121,3 +121,19 @@ function getAddress() {
   else
     return url + 'user/addresslist'
 }
+
+//生成订单
+function generateOrder() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'shoppingflow/createorder'
+}
+
+//查询订单
+function queryOrder() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'order/query'
+}

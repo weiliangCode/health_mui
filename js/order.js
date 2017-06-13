@@ -22,6 +22,7 @@ window.onload = function () {
         status: stateId,
         username: opendid
     }, function (data) {
+        $('.J_loading').css('display', 'none');
         var obj = data.data.all_order_list;
         console.log(obj);
         // $('.J_goodsList').html('');
@@ -33,12 +34,13 @@ window.onload = function () {
         $('.J_noOrder').css('display', 'none');
         $('.J_goods').css('display', 'block');
         CreateShopGoogsList(obj);
-        $('.J_loading').css('display', 'none');
+        
     })
 
     //创建普通商品列表
     function CreateGoogsList(obj) {
         for (var i = 0; i < obj.length; i++) {
+            console.log(obj[i])
             var str = '<li class="item">';
             str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>'
             str += '<div class="list_m">'

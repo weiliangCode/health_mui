@@ -1,6 +1,6 @@
 mui.ready(function () {
     mui.init();
-
+    var locaArr = location.search.split("=");
     //初始化
     var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
     $.post(getAddress(), {
@@ -36,8 +36,8 @@ mui.ready(function () {
     //选择地址
     $('.J_list').on('tap', '.J_item', function(){
         var index = $(this).attr('data');
-        console.log(index);
-        location.href = '../html/obligationOrder.html'
+        var url = '../html/obligationOrder.html?orderId=' + locaArr[1] + '&address=' + index;
+        location.href = url;
     })
 
 })
