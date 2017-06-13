@@ -17,7 +17,7 @@ window.onload = function () {
 
     //获得订单信息
     stateId = parseInt(stateId) > 0 ? stateId - 1 : '*';
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }

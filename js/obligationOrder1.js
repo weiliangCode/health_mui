@@ -3,7 +3,7 @@ window.onload = function () {
 
   //全局变量
   var orderId = location.search.split("=")[1];
-  var username = localStorage.getItem(opendid);
+  var username = localStorage.getItem('openid');
   if(!username) {
       location.href ='../index.html'
   }

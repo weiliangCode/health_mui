@@ -2,7 +2,7 @@ mui.ready(function () {
     mui.init();
     var locaArr = location.search.split("=");
     //初始化
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }

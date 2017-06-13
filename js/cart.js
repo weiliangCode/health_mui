@@ -21,7 +21,7 @@ window.onload = function () {
     $('.J_orderid').css('display', 'block');
     $('.J_sumPrice').css('display', 'block');
     $('.J_edit_bottom').css('display', 'none');
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }
@@ -61,7 +61,7 @@ window.onload = function () {
     $('.J_orderid').css('display', 'block');
     $('.J_sumPrice').css('display', 'none');
     $('.J_edit_bottom').css('display', 'block');
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }
@@ -103,7 +103,7 @@ window.onload = function () {
     $('.J_orderid').css('display', 'none');
     $('.J_sumPrice').css('display', 'none');
     $('.J_edit_bottom').css('display', 'none');
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }
@@ -171,7 +171,7 @@ window.onload = function () {
         newGoods.push(goods[gId]);
       }
     }
-     var opendid = localStorage.getItem(opendid);
+     var opendid = localStorage.getItem('openid');
       if(!opendid) {
         location.href ='../index.html'
       }
@@ -286,7 +286,7 @@ window.onload = function () {
 
   //删除购物车商品
   function delgoods(g_id) {
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }
@@ -301,7 +301,7 @@ window.onload = function () {
 
   //编辑购物车商品
   function editGoods(g_id,num,callback) {
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }

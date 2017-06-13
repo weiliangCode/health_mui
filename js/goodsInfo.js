@@ -111,7 +111,7 @@ window.onload = function () {
 
     //生成订单
     if (flog) {
-      var opendid = localStorage.getItem(opendid);
+      var opendid = localStorage.getItem('openid');
       if(!opendid) {
         location.href ='../index.html'
       }
@@ -144,7 +144,7 @@ window.onload = function () {
 
     } else {
       //加入购物车
-     var opendid = localStorage.getItem(opendid);
+     var opendid = localStorage.getItem('openid');
       if(!opendid) {
         location.href ='../index.html'
       }
@@ -175,7 +175,7 @@ window.onload = function () {
 
   //关注按钮
   $('.J_notice').on('tap', function () {
-   var opendid = localStorage.getItem(opendid);
+   var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }
@@ -189,7 +189,7 @@ window.onload = function () {
 
   //收藏按钮
   $('.J_collection').on('tap', function () {
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }

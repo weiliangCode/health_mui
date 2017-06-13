@@ -61,7 +61,7 @@ window.onload = function () {
       postalcode = $('.J_postalcode').val();
 
     
-    var opendid = localStorage.getItem(opendid);
+    var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }

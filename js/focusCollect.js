@@ -9,7 +9,7 @@ window.onload = function () {
 
     //初始化数据
     if(stateId === 0) {
-        var opendid = localStorage.getItem(opendid);
+        var opendid = localStorage.getItem('openid');
         if(!opendid) {
         location.href ='../index.html'
         }
@@ -36,7 +36,7 @@ window.onload = function () {
         }, 'json'
         );
     } else {
-         var opendid = localStorage.getItem(opendid);
+         var opendid = localStorage.getItem('openid');
         if(!opendid) {
         location.href ='../index.html'
         }

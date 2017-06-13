@@ -2,7 +2,7 @@ mui.ready(function() {
   mui.init();
 
   //获得会员信息
-  var opendid = localStorage.getItem(opendid);
+  var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }

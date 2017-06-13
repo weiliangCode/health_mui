@@ -6,7 +6,7 @@ window.onload = function () {
   var loca = location.search.split("&");
   var locaArr = loca[0].split("=");
   var orderId = locaArr[1];
-  var opusernameendid = localStorage.getItem(opendid);
+  var opusernameendid = localStorage.getItem('openid');
     if(!username) {
        location.href ='../index.html'
     }

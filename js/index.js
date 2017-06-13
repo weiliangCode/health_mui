@@ -17,14 +17,14 @@ mui.ready(function () {
     if (r != null) return unescape(r[2]); return null; //返回参数值
   }
 
-  alert(11111);
+  // alert(11111);
   var code = getUrlParam('code');//拿这个code 请求的话要用这个获取openid
   //获得openID
   mui.post(getOpenId(), {
     code: code
   }, function (data) {
-    localStorage.setItem(openid,data.data.openid);
-    alert(data.data.openid);
+    localStorage.setItem('openid',data.data.openid);
+    $('#test').html(data.data.openid);
   })
 
   //初始化数据
