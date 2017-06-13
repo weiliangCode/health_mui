@@ -3,7 +3,10 @@ window.onload = function () {
 
   //全局变量
   var orderId = location.search.split("=")[1];
-  var username = sessionStorage.getItem("opendid") ? sessionStorage.getItem("opendid") : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+  var username = localStorage.getItem(opendid);
+  if(!username) {
+      location.href ='../index.html'
+  }
   var goods = {
     username: '',
     g_ids: '',
@@ -12,7 +15,7 @@ window.onload = function () {
 
   //初始化
   if (orderId.length == '13') {
-    var obj = sessionStorage.getItem(orderId);
+    var obj = localStorage.getItem(orderId);
     goods = obj ? JSON.parse(obj) : '';
   } else {
     $.post(queryOrder(), {

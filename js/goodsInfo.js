@@ -111,7 +111,10 @@ window.onload = function () {
 
     //生成订单
     if (flog) {
-      var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+      var opendid = localStorage.getItem(opendid);
+      if(!opendid) {
+        location.href ='../index.html'
+      }
       $.post(getAddress(), {
         username: opendid
       }, function (data) {
@@ -141,7 +144,10 @@ window.onload = function () {
 
     } else {
       //加入购物车
-      var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+     var opendid = localStorage.getItem(opendid);
+      if(!opendid) {
+        location.href ='../index.html'
+      }
       $.post(getShoppingcart(), {
         g_id: goodsId,
         num: num,
@@ -169,7 +175,10 @@ window.onload = function () {
 
   //关注按钮
   $('.J_notice').on('tap', function () {
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+   var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getGoodsNotice(), {
       g_id: goodsId,
       username: opendid,
@@ -180,7 +189,10 @@ window.onload = function () {
 
   //收藏按钮
   $('.J_collection').on('tap', function () {
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getGoodsCollection(), {
       g_id: goodsId,
       username: opendid,

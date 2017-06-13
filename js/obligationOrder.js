@@ -6,7 +6,10 @@ window.onload = function () {
   var loca = location.search.split("&");
   var locaArr = loca[0].split("=");
   var orderId = locaArr[1];
-  var username = sessionStorage.getItem("opendid") ? sessionStorage.getItem("opendid") : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+  var opusernameendid = localStorage.getItem(opendid);
+    if(!username) {
+       location.href ='../index.html'
+    }
   var goods = {
     username: '',
     g_ids: '',

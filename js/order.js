@@ -17,7 +17,10 @@ window.onload = function () {
 
     //获得订单信息
     stateId = parseInt(stateId) > 0 ? stateId - 1 : '*';
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     $.post(getOrder(), {
         status: stateId,
         username: opendid

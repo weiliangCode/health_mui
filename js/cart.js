@@ -21,7 +21,10 @@ window.onload = function () {
     $('.J_orderid').css('display', 'block');
     $('.J_sumPrice').css('display', 'block');
     $('.J_edit_bottom').css('display', 'none');
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getShoppingcart(), {
       operate: 'list',
       username: opendid
@@ -58,7 +61,10 @@ window.onload = function () {
     $('.J_orderid').css('display', 'block');
     $('.J_sumPrice').css('display', 'none');
     $('.J_edit_bottom').css('display', 'block');
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getShoppingcart(), {
       operate: 'list',
       username: opendid
@@ -97,7 +103,10 @@ window.onload = function () {
     $('.J_orderid').css('display', 'none');
     $('.J_sumPrice').css('display', 'none');
     $('.J_edit_bottom').css('display', 'none');
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getOrder(), {
       status: '*',
       username: opendid
@@ -162,7 +171,10 @@ window.onload = function () {
         newGoods.push(goods[gId]);
       }
     }
-     var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+     var opendid = localStorage.getItem(opendid);
+      if(!opendid) {
+        location.href ='../index.html'
+      }
       $.post(getAddress(), {
         username: opendid
       }, function (data) {
@@ -274,7 +286,10 @@ window.onload = function () {
 
   //删除购物车商品
   function delgoods(g_id) {
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getShoppingcart(), {
       g_id: g_id,
       operate: 'del',
@@ -286,7 +301,10 @@ window.onload = function () {
 
   //编辑购物车商品
   function editGoods(g_id,num,callback) {
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     mui.post(getShoppingcart(), {
       g_id: g_id,
       num: num,

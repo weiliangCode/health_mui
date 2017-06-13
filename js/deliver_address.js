@@ -2,7 +2,10 @@ mui.ready(function () {
     mui.init();
     var locaArr = location.search.split("=");
     //初始化
-    var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
     $.post(getAddress(), {
         username: opendid
     }, function (data) {

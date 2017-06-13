@@ -60,7 +60,11 @@ window.onload = function () {
       addInfo = $('.J_addInfo').val(),
       postalcode = $('.J_postalcode').val();
 
-      var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+    
+    var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
 
     $.post(getAddaddress(), {
       path: p1 + ',' + p2 + ',' + p3 + ',',

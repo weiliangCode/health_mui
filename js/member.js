@@ -2,7 +2,10 @@ mui.ready(function() {
   mui.init();
 
   //获得会员信息
-  var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+  var opendid = localStorage.getItem(opendid);
+    if(!opendid) {
+       location.href ='../index.html'
+    }
   $.post(getUsercenter(), {
     username: opendid
   }, function (data) {

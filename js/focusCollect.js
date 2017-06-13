@@ -9,7 +9,10 @@ window.onload = function () {
 
     //初始化数据
     if(stateId === 0) {
-        var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+        var opendid = localStorage.getItem(opendid);
+        if(!opendid) {
+        location.href ='../index.html'
+        }
         mui.post(getUserNotice(), {
             username: opendid
         }, function (data) {
@@ -33,7 +36,10 @@ window.onload = function () {
         }, 'json'
         );
     } else {
-         var opendid = sessionStorage.getItem(opendid) ? sessionStorage.getItem(opendid) : 'outktv28lv2UjvPTeT1TvKRRx0tc';
+         var opendid = localStorage.getItem(opendid);
+        if(!opendid) {
+        location.href ='../index.html'
+        }
          mui.post(getUserCollection(), {
             username: opendid
         }, function (data) {
