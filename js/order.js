@@ -1,65 +1,46 @@
 window.onload = function () {
-    mui.init();
 
+    //初始化
+    mui.init();
     var titleArr = ['全部订单', '待付款的订单', '待发货的订单', '已发货的订单', '已完成的订单'];
     var stateId = location.search;
     stateId = parseInt(stateId.split("=")[1]);
 
     var stateList = document.querySelector(".J_topState").getElementsByTagName("li");
     stateList[stateId].className = "active";
-
     document.querySelector("title").innerHTML = titleArr[stateId];
-
-    //点击“去逛逛” 按钮
-    document.querySelector('.J_gotoIndex').onclick = function () {
-        location.href = "../index.html";
-    }
-
-    //获得订单信息
-    stateId = parseInt(stateId) > 0 ? stateId - 1 : '*';
     var opendid = localStorage.getItem('openid');
     if(!opendid) {
        location.href ='../index.html'
     }
-    $.post(getOrder(), {
-        status: stateId,
-        username: opendid
-    }, function (data) {
-        $('.J_loading').css('display', 'none');
-        var obj = data.data.all_order_list;
-        console.log(obj);
-        // $('.J_goodsList').html('');
-        if (obj.length < 1) {
-            $('.J_noOrder').css('display', 'block');
-            $('.J_goods').css('display', 'none');
-            return;
-        }
-        $('.J_noOrder').css('display', 'none');
-        $('.J_goods').css('display', 'block');
-        CreateShopGoogsList(obj);
-        
-    })
+    initDisplay();
 
-    //创建普通商品列表
-    function CreateGoogsList(obj) {
-        for (var i = 0; i < obj.length; i++) {
-            console.log(obj[i])
-            var str = '<li class="item">';
-            str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>'
-            str += '<div class="list_m">'
-            str += '<h3>健康无忧体检套餐</h3>'
-            str += '</div>'
-            str += '<div class="list_r">'
-            str += '<p class="price">￥498</p>'
-            str += '<p>× <span>1</span></p>'
-            str += '</div>'
-            str += '</li>'
-            $('.J_goodsList').append($(str));
-        }
+
+    //初始化页面显示
+    function initDisplay() {
+        var tempStateId = parseInt(stateId) > 0 ? stateId - 1 : '*';
+        $.post(getOrder(), {
+            status: tempStateId,
+            username: opendid
+        }, function (data) {
+            $('.J_loading').css('display', 'none');
+            var obj = data.data.all_order_list;
+            console.log(obj);
+            // $('.J_goodsList').html('');
+            if (obj.length < 1) {
+                $('.J_noOrder').css('display', 'block');
+                $('.J_goods').css('display', 'none');
+                return;
+            }
+            $('.J_noOrder').css('display', 'none');
+            $('.J_goods').css('display', 'block');
+            CreateShopGoogsList(obj);
+        })
     }
-
+    
     //创建购买商品列表
     function CreateShopGoogsList(obj) {
+        $('.J_goodsList').html('');
         for (var index in obj) {
             var item  = obj[index];
             var orderInfo = item.orderInfo;
@@ -98,6 +79,10 @@ window.onload = function () {
         }
     }
 
+    //点击“去逛逛” 按钮
+    document.querySelector('.J_gotoIndex').onclick = function () {
+        location.href = "../index.html";
+    }
 
     //点击过付款
     $('.J_goodsList').on('tap','.J_buyBtn',function(){
@@ -113,10 +98,9 @@ window.onload = function () {
         $.post(cancelOrder(), {
             order_no: order_no
         }, function (data) {
-            console.log(data);
+            initDisplay();
         })
 
     })
-
 
 }

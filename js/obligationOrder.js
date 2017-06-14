@@ -139,7 +139,6 @@ window.onload = function () {
         g_ids: goods.g_ids,
         address_id: goods.address_id
       }, function (data) {
-        console.log(data)
         location.href = '../html/verifyOrder.html'
       })
     } else {
@@ -149,7 +148,6 @@ window.onload = function () {
         num: goodsNum,
         address_id: goods.address_id
       }, function (data) {
-        console.log(data);
         location.href = '../html/verifyOrder.html'
       })
     }

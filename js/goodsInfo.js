@@ -1,5 +1,9 @@
 window.onload = function () {
   mui.init();
+  var opendid = localStorage.getItem('openid');
+  if (!opendid) {
+    location.href = '../index.html'
+  }
 
   var goodsInfo = {};  // document.querySelector(".J_fixedTopClrear").onclick = function(){
   //   document.querySelector(".J_fixedTop").style.display = "none";
@@ -33,9 +37,8 @@ window.onload = function () {
   dataInit();
 
   //设置头像
-  $('.J_userImg').attr('src',localStorage.getItem('headimgurl'));
+  $('.J_userImg').attr('src', localStorage.getItem('headimgurl'));
   $('.J_userName').html(localStorage.getItem('userName'));
-
 
 
   mui(".J_fixedTop").on('tap', '.J_fixedTopClrear', function () {
@@ -115,17 +118,13 @@ window.onload = function () {
 
     //生成订单
     if (flog) {
-      var opendid = localStorage.getItem('openid');
-      if(!opendid) {
-        location.href ='../index.html'
-      }
       $.post(getAddress(), {
         username: opendid
       }, function (data) {
         var obj = data.data.default_address;
         var url = '';
         var address_id = '';
-        if(obj) {
+        if (obj) {
           url = '../html/obligationOrder.html';
           address_id = obj.id;
         } else {
@@ -136,22 +135,18 @@ window.onload = function () {
         var goodArr = [];
         goodArr.push(goodsInfo);
         var obj = {
-          username:opendid,
+          username: opendid,
           g_ids: goodsInfo.goods_id,
-          address_id:address_id,
+          address_id: address_id,
           num: num,
           goods: goodArr
-      }
-      localStorage.setItem(orderId,JSON.stringify(obj));
-      location.href = url + '?goodsOrderId=' + orderId;
+        }
+        localStorage.setItem(orderId, JSON.stringify(obj));
+        location.href = url + '?goodsOrderId=' + orderId;
       })
 
     } else {
       //加入购物车
-     var opendid = localStorage.getItem('openid');
-      if(!opendid) {
-        location.href ='../index.html'
-      }
       $.post(getShoppingcart(), {
         g_id: goodsId,
         num: num,
@@ -179,10 +174,6 @@ window.onload = function () {
 
   //关注按钮
   $('.J_notice').on('tap', function () {
-   var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
-    }
     mui.post(getGoodsNotice(), {
       g_id: goodsId,
       username: opendid,
@@ -193,10 +184,6 @@ window.onload = function () {
 
   //收藏按钮
   $('.J_collection').on('tap', function () {
-    var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
-    }
     mui.post(getGoodsCollection(), {
       g_id: goodsId,
       username: opendid,

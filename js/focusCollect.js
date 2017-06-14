@@ -9,30 +9,36 @@ window.onload = function () {
     if (!opendid) {
         location.href = '../index.html'
     }
+    initDisplay();
 
 
-    //初始化数据
-    if (stateId === 0) {
-        $.post(getUserNotice(), {
-            username: opendid
-        }, function (data) {
-            var obj = data.data.notice_list;
-            console.log(obj);
-            creationData(obj, 'true');
-        }, 'json'
-        );
-    } else {
-        $.post(getUserCollection(), {
-            username: opendid
-        }, function (data) {
-            var obj = data.data.collection_list;
-            creationData(obj, 'false');
-        }, 'json'
-        );
+    //刷新页面显示
+    function initDisplay() {
+        //初始化数据
+        if (stateId === 0) {
+            $.post(getUserNotice(), {
+                username: opendid
+            }, function (data) {
+                var obj = data.data.notice_list;
+                console.log(obj);
+                creationData(obj, 'true');
+            }, 'json'
+            );
+        } else {
+            $.post(getUserCollection(), {
+                username: opendid
+            }, function (data) {
+                var obj = data.data.collection_list;
+                creationData(obj, 'false');
+            }, 'json'
+            );
+        }
     }
+
 
     //创建数据
     function creationData(obj, floag) {
+        $('.J_goodsList').html('');
         for (var index in obj) {
             var item = obj[index];
             item = item.goodsInfo;
@@ -69,7 +75,7 @@ window.onload = function () {
                 username: opendid,
                 g_id: g_id
             }, function (data) {
-                console.log(data);
+                initDisplay();
             }, 'json'
             );
         } else {
@@ -77,7 +83,7 @@ window.onload = function () {
                 username: opendid,
                 g_id,g_id
             }, function (data) {
-                console.log(data);
+                initDisplay();
             }, 'json'
             );
         }
