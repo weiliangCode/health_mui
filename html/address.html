@@ -15,7 +15,19 @@
 </head>
 
 <body>
-  <form class="useInfo"> 
+  <div class="prompt J_prompt">
+    <div class="content">
+      <!--<h3 class="top">标题</h3>-->
+      <div class="middle">
+        <p class="J_message">申请提交失败，请修改后提交！</p>
+      </div>
+      <div class="bottom">
+        <button class="J_promptBtn">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <form class="useInfo">
     <p>
       <span>收货人</span>
       <input type="text" name="storeName" placeholder="姓名" class="J_name">
@@ -57,10 +69,10 @@
       <input type="text" name="storeName" placeholder="邮政编码" class="J_postalcode">
     </p>
   </form>
-  
-  <div class="bottom">
-    <button type="button" class="J_submit">保存</button>
-    <button type="button" class="J_cancel">取消</button>
+
+  <div class="bottomBtn">
+    <button type="button" class="submitBtn J_submit">保存</button>
+    <button type="button" class="cancelBtn J_cancel">取消</button>
   </div>
 </body>
 

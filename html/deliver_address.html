@@ -2,19 +2,69 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-  <title>收货地址</title>
-  <link href="../css/mui.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/base.css" />
-  <link href="../css/deliver_address.css" rel="stylesheet" />
-  <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/mui.min.js"></script>
-  <script src="../js/api.js"></script>
-  <script src="../js/deliver_address.js" type="text/javascript" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>收货地址</title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link href="../css/deliver_address.css" rel="stylesheet" />
+    <link href="../css/address.css" rel="stylesheet" />
+    <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/deliver_address.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
+    <div class="prompt J_prompt">
+        <div class="content">
+            <!--<h3 class="top">标题</h3>-->
+            <div class="middle">
+                <p class="J_message">申请提交失败，请修改后提交！</p>
+            </div>
+            <div class="bottom">
+                <button class="J_promptBtn">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="addAddress J_addAddress">
+        <form class="useInfo">
+            <p>
+                <span>收货人</span>
+                <input type="text" name="storeName" placeholder="姓名" class="J_name">
+            </p>
+            <p>
+                <span>联系电话</span>
+                <input type="text" name="storeName" placeholder="手机或固定电话" class="J_phone">
+            </p>
+            <p>
+                <span>选择地区</span>
+                <select name="dizi" class="province J_province">
+          <option value="选择省份">选择省份</option>
+      </select>
+                <select name="dizi" class="J_city">
+          <option value="城市">城市</option>
+      </select>
+                <select name="dizi" class="J_district">
+          <option value="区县">区县</option>
+      </select>
+            </p>
+            <p>
+                <span>详情地区</span>
+                <input type="text" name="storeName" placeholder="街道门牌信息" class="J_addInfo">
+            </p>
+            <p>
+                <span>邮政编码</span>
+                <input type="text" name="storeName" placeholder="邮政编码" class="J_postalcode">
+            </p>
+        </form>
+
+        <div class="bottomBtn">
+            <button type="button" class="submitBtn J_submit">保存</button>
+            <button type="button" class="cancelBtn J_cancel">取消</button>
+        </div>
+    </div>
     <ul class="mui-table-view J_list">
         <!--<li class="mui-table-view-cell J_item" data='3'>
             <p>
@@ -24,6 +74,7 @@
             <p><span class="default">[默认地址]</span>广东省深圳市宝安区有点小区118号888号</p>
         </li>-->
     </ul>
+    <button type="button" class="mui-btn mui-btn-success addBtn J_addBtn">添加</button>
 </body>
 
 </html>

@@ -30,11 +30,11 @@
   width: auto;
 }
 
-.bottom{
+.bottomBtn{
   padding: 20px 10px 0px;
 }
 
-.bottom button{
+.bottomBtn button{
   width: 100%;
   height: 40px;
   border: none;
@@ -42,12 +42,12 @@
   margin-bottom: 10px;
 }
 
-.bottom button:nth-child(1){
+.useInfo .submitBtn{
   background: #00a0f8;
   color: #fff;
 }
 
-.bottom button:nth-child(2){
+.bottomBtn .cancelBtn{
   background: #fff;
   color: #999999;
   border: 1px solid #ddd;

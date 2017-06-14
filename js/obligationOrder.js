@@ -6,7 +6,7 @@ window.onload = function () {
   var loca = location.search.split("&");
   var locaArr = loca[0].split("=");
   var orderId = locaArr[1];
-  var opusernameendid = localStorage.getItem('openid');
+  var username = localStorage.getItem('openid');
     if(!username) {
        location.href ='../index.html'
     }
@@ -150,6 +150,7 @@ window.onload = function () {
         address_id: goods.address_id
       }, function (data) {
         console.log(data);
+        location.href = '../html/verifyOrder.html'
       })
     }
 
@@ -157,7 +158,7 @@ window.onload = function () {
 
   //修改地址
   $('.J_ems').on('click', '.J_alterBtn', function () {
-    location.href = '../html/deliver_address.html?orderId=' + orderId
+    location.href = '../html/deliver_address.html' + locaArr[0] + '=' + locaArr[1]
   })
 
   //添加地址
