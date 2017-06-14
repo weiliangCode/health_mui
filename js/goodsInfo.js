@@ -32,6 +32,10 @@ window.onload = function () {
 
   dataInit();
 
+  //设置头像
+  $('.J_userImg').attr('src',localStorage.getItem('headimgurl'));
+  $('.J_userName').html(localStorage.getItem('userName'));
+
 
 
   mui(".J_fixedTop").on('tap', '.J_fixedTopClrear', function () {

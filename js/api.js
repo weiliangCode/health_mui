@@ -27,6 +27,13 @@ function getGoodsCollection() {
   else
     return url + 'goods/collection'
 }
+//取消收藏
+function cancelCollection() {
+  if (dev === "true")
+    return devUrl + 'goods/collection.php';
+  else
+    return url + 'goods/collection/cancel'
+}
 
 //添加关注
 function getGoodsNotice() {
@@ -34,6 +41,14 @@ function getGoodsNotice() {
     return devUrl + 'goods/notice.php';
   else
     return url + 'goods/notice'
+}
+
+//取消关注
+function cancelNotice() {
+  if (dev === "true")
+    return devUrl + 'goods/notice.php';
+  else
+    return url + 'goods/notice/cancel'
 }
 
 //当前用户关注的商品列表
@@ -129,6 +144,16 @@ function generateOrder() {
   else
     return url + 'shoppingflow/createorder'
 }
+
+//取消订单
+function cancelOrder() {
+  if (dev === "true")
+    return devUrl + '';
+  else
+    return url + 'order/cancel'
+}
+
+
 
 //查询订单
 function queryOrder() {

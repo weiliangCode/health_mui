@@ -62,27 +62,31 @@ window.onload = function () {
     function CreateShopGoogsList(obj) {
         for (var index in obj) {
             var item  = obj[index];
-            var str = '<li class="allOrder">';
+            var orderInfo = item.orderInfo;
+            var str = '<li class="allOrder J_order">';
             str += '<p class="orderid">';
             str += '订单号：';
             str += '<span>' + item.order_no+ '</span>';
             if(item.status == '0') {
-                str += '<a href="javascript:;">取消</a>';
+                str += '<a href="javascript:;" class="J_cancel" data="' + item.order_no + '">取消</a>';
             }
             str += '</p>';
-            str += '<div class="item">';
-            str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>';
-            str += '<div class="list_m">';
-            str += '<h3>健康无忧体检套餐</h3>';
-            str += '</div>';
-            str += '<div class="list_r">';
-            str += '<p class="price">￥498</p>';
-            str += '<p>× <span>1</span></p>';
-            str += '</div>';
-            str += '</div>';
+            for(var i in orderInfo) {
+                var goods = orderInfo[i];
+                str += '<div class="item">';
+                str += '<div class="list_l"><img src="../images/index/goods001.jpg" alt=""></div>';
+                str += '<div class="list_m">';
+                str += '<h3>' + goods.goods_name+ '</h3>';
+                str += '</div>';
+                str += '<div class="list_r">';
+                str += '<p class="price">￥' + goods.price+ '</p>';
+                str += '<p>× <span>' +goods.num+ '</span></p>';
+                str += '</div>';
+                str += '</div>';
+            }
             str += '<p class="sumPrice">';
             str += '总价：￥';
-            str += '<span>2222.00</span>';
+            str += '<span>' + item.amount + '</span>';
             if(item.status == '0') {
                 str += '<button class="J_buyBtn" data="'+item.order_no +'">付款</button>';
             } else {
@@ -101,6 +105,17 @@ window.onload = function () {
         // console.log(order_no);
         location.href = "obligationOrder.html?order_no=" + order_no;
         
+    })
+
+    //取消订单
+    $('.J_goodsList').on('tap','.J_cancel',function(){
+        var order_no = $(this).attr('data');
+        $.post(cancelOrder(), {
+            order_no: order_no
+        }, function (data) {
+            console.log(data);
+        })
+
     })
 
 

@@ -1,6 +1,10 @@
 mui.ready(function() {
   mui.init();
 
+
+  //设置头像
+  $('.J_userName').html(localStorage.getItem('userName'));
+  
   //获得会员信息
   var opendid = localStorage.getItem('openid');
     if(!opendid) {
