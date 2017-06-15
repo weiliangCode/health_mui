@@ -35,6 +35,7 @@ window.onload = function () {
   }
 
   dataInit();
+  isGoods();
 
   //设置头像
   $('.J_userImg').attr('src', localStorage.getItem('headimgurl'));
@@ -154,6 +155,7 @@ window.onload = function () {
         username: opendid
       }, function (data) {
         console.log(data);
+        $('.J_cartIcon').css('display', 'block');
       })
     }
 
@@ -215,6 +217,21 @@ window.onload = function () {
     $('.J_buyInput input').eq(1).val(num)
   })
 
+
+  //判断购物车是否有商品
+  function isGoods() {
+    $.post(getShoppingcart(), {
+      operate: 'list',
+      username: opendid
+    }, function (data) {
+      console.log(data.data.shopping_cart);
+      for(var index in data.data.shopping_cart) {
+        console.log(111);
+        $('.J_cartIcon').css('display', 'block');
+        break;
+      }
+    })
+  }
 
 
 }

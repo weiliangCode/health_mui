@@ -22,8 +22,8 @@ window.onload = function () {
     $('.J_sumPrice').css('display', 'block');
     $('.J_edit_bottom').css('display', 'none');
     var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
+    if (!opendid) {
+      location.href = '../index.html'
     }
     mui.post(getShoppingcart(), {
       operate: 'list',
@@ -52,7 +52,7 @@ window.onload = function () {
         $('.J_goodsList').append($(str));
       }
       total();
-      $('.J_loading').css('display','none');
+      $('.J_loading').css('display', 'none');
     })
   }
 
@@ -62,8 +62,8 @@ window.onload = function () {
     $('.J_sumPrice').css('display', 'none');
     $('.J_edit_bottom').css('display', 'block');
     var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
+    if (!opendid) {
+      location.href = '../index.html'
     }
     mui.post(getShoppingcart(), {
       operate: 'list',
@@ -94,7 +94,7 @@ window.onload = function () {
         str += '</li>';
         $('.J_goodsList').append($(str));
       }
-      $('.J_loading').css('display','none');
+      $('.J_loading').css('display', 'none');
     })
   }
 
@@ -104,8 +104,8 @@ window.onload = function () {
     $('.J_sumPrice').css('display', 'none');
     $('.J_edit_bottom').css('display', 'none');
     var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
+    if (!opendid) {
+      location.href = '../index.html'
     }
     mui.post(getOrder(), {
       status: '*',
@@ -146,7 +146,7 @@ window.onload = function () {
         str += '</li>';
         $('.J_goodsList').append($(str));
       }
-      $('.J_loading').css('display','none');
+      $('.J_loading').css('display', 'none');
     })
   }
 
@@ -158,46 +158,46 @@ window.onload = function () {
   })
 
   //购物车结算
-  $('.J_sumPrice').on('tap', '.J_buyBtn', function() {
-     var listArr = $('.J_goodsList li');
+  $('.J_sumPrice').on('tap', '.J_buyBtn', function () {
+    var listArr = $('.J_goodsList li');
     var totalNum = 0;
     var g_ids = '';
     var newGoods = [];
     console.log(goods);
-    for(var i=0; i<listArr.length; i++) {
-      if(listArr.eq(i).find('.J_radio').attr('data') == 'true') {
+    for (var i = 0; i < listArr.length; i++) {
+      if (listArr.eq(i).find('.J_radio').attr('data') == 'true') {
         var gId = listArr.eq(i).attr('data');
         g_ids += gId + ',';
         newGoods.push(goods[gId]);
       }
     }
-     var opendid = localStorage.getItem('openid');
-      if(!opendid) {
-        location.href ='../index.html'
+    var opendid = localStorage.getItem('openid');
+    if (!opendid) {
+      location.href = '../index.html'
+    }
+    $.post(getAddress(), {
+      username: opendid
+    }, function (data) {
+      var obj = data.data.default_address;
+      var url = '';
+      var address_id = '';
+      if (obj) {
+        url = '../html/obligationOrder.html';
+        address_id = obj.id
+      } else {
+        url = '../html/address.html';
       }
-      $.post(getAddress(), {
-        username: opendid
-      }, function (data) {
-        var obj = data.data.default_address;
-        var url = '';
-        var address_id = '';
-        if(obj) {
-          url = '../html/obligationOrder.html';
-          address_id = obj.id
-        } else {
-          url = '../html/address.html';
-        }
-         var date = new Date();
-          var orderId = date.getTime();
-          var obj = {
-            username:opendid,
-            g_ids: g_ids,
-            address_id:address_id,
-            goods: newGoods
-          }
-          localStorage.setItem(orderId,JSON.stringify(obj));
-          location.href = url + '?orderId=' + orderId;
-      })
+      var date = new Date();
+      var orderId = date.getTime();
+      var obj = {
+        username: opendid,
+        g_ids: g_ids,
+        address_id: address_id,
+        goods: newGoods
+      }
+      localStorage.setItem(orderId, JSON.stringify(obj));
+      location.href = url + '?orderId=' + orderId;
+    })
   })
 
   //点击了商品单选框
@@ -219,7 +219,7 @@ window.onload = function () {
 
   //点击了编辑/完成按钮
   $('.J_edit').on('tap', function () {
-    $('.J_loading').css('display','block');
+    $('.J_loading').css('display', 'block');
     if ($(this).attr('data') == 'edit') {
       $(this).html('完成');
       $(this).attr('data', 'fulfill');
@@ -227,26 +227,26 @@ window.onload = function () {
     } else {
       $(this).html('编辑');
       $(this).attr('data', 'edit');
- 
+
       var listArr = $('.J_goodsList li');
       var t1 = listArr.length;
       var t2 = 0;
-      for(var i=0; i<listArr.length; i++) {
+      for (var i = 0; i < listArr.length; i++) {
         var g_id = listArr.eq(i).attr('data');
         var num = parseInt(listArr.eq(i).find('.J_val').val());
-        editGoods(g_id,num,function() {
+        editGoods(g_id, num, function () {
           t2++;
-          if(t2 == t1) {
+          if (t2 == t1) {
             cartData();
           }
         });
       }
-      
+
     }
   })
 
   //编辑输入框
-  $('.J_goodsList').on('tap', '.J_sub',function () {
+  $('.J_goodsList').on('tap', '.J_sub', function () {
     var num = parseInt($(this).siblings('.J_val').val());
     if (num > 1) {
       num--;
@@ -254,15 +254,15 @@ window.onload = function () {
     $(this).siblings('.J_val').val(num)
 
   })
-  
-  $('.J_goodsList').on('blur', '.J_val',function () {
+
+  $('.J_goodsList').on('blur', '.J_val', function () {
     var num = parseInt($(this).val());
     num = num > 1 && num < 100 ? num : 1;
     $(this).val(num)
 
   })
 
-  $('.J_goodsList').on('tap', '.J_add',function () {
+  $('.J_goodsList').on('tap', '.J_add', function () {
     var num = parseInt($(this).siblings('.J_val').val());
     if (num < 100) {
       num++;
@@ -271,11 +271,11 @@ window.onload = function () {
   })
 
   //计算总价
-  function total(){
+  function total() {
     var listArr = $('.J_goodsList li');
     var totalNum = 0;
-    for(var i=0; i<listArr.length; i++) {
-      if(listArr.eq(i).find('.J_radio').attr('data') == 'true') {
+    for (var i = 0; i < listArr.length; i++) {
+      if (listArr.eq(i).find('.J_radio').attr('data') == 'true') {
         var price = parseFloat(listArr.eq(i).find('.J_price').html());
         var num = parseInt(listArr.eq(i).find('.J_num').html());
         totalNum += (price * num);
@@ -287,8 +287,8 @@ window.onload = function () {
   //删除购物车商品
   function delgoods(g_id) {
     var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
+    if (!opendid) {
+      location.href = '../index.html'
     }
     mui.post(getShoppingcart(), {
       g_id: g_id,
@@ -300,10 +300,10 @@ window.onload = function () {
   }
 
   //编辑购物车商品
-  function editGoods(g_id,num,callback) {
+  function editGoods(g_id, num, callback) {
     var opendid = localStorage.getItem('openid');
-    if(!opendid) {
-       location.href ='../index.html'
+    if (!opendid) {
+      location.href = '../index.html'
     }
     mui.post(getShoppingcart(), {
       g_id: g_id,

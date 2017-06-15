@@ -5,6 +5,8 @@ mui.ready(function () {
     document.querySelector(".J_fixedTop").style.display = "none";
   }
 
+  
+
   //延时5秒关闭J_fixedTop
   setTimeout(function () {
     $('.J_fixedTop').css('display', 'none');
@@ -34,8 +36,8 @@ mui.ready(function () {
 
   //测试账号
   // localStorage.setItem('openid','opSdF1VNR03IayTp9tlH7-DJ8c8M');
- 
-
+  var opendid = localStorage.getItem('openid');
+  isGoods();
   //初始化数据
   mui.post(getGoodslist(), {
   }, function (data) {
@@ -73,5 +75,20 @@ mui.ready(function () {
 
   }, 'json'
   );
+
+  //判断购物车是否有商品
+  function isGoods() {
+    $.post(getShoppingcart(), {
+      operate: 'list',
+      username: opendid
+    }, function (data) {
+      console.log(data.data.shopping_cart);
+      for(var index in data.data.shopping_cart) {
+        console.log(111);
+        $('.J_cartIcon').css('display', 'block');
+        break;
+      }
+    })
+  }
 
 })   
