@@ -27,7 +27,7 @@ function getGoodsCollection() {
   else
     return url + 'goods/collection'
 }
-//取消收藏
+//添加收藏
 function cancelCollection() {
   if (dev === "true")
     return devUrl + 'goods/collection.php';
@@ -102,7 +102,7 @@ function getShoppingcart() {
 }
  
 
-//获得地址
+//获得地理地址
 function getSite() {
   if (dev === "true")
     return devUrl + '';
@@ -129,7 +129,7 @@ function getAddaddress() {
     return url + 'user/addaddress'
 }
 
-//获得地址
+//获得用户地址
 function getAddress() {
   if (dev === "true")
     return devUrl + '';
