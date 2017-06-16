@@ -1,3 +1,19 @@
+.header{
+  width: 100%;
+  height: 37px;
+  background: #ff7600;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.header p{
+  height: 37px;
+  line-height: 37px;
+  color: #fff;
+}
+
 .content{
   background: #eee;
 }
@@ -14,9 +30,8 @@
 }
 
 .goodsList .item{
-  border-bottom: 1px solid #ddd;
   display: flex;
-  padding: 28px 0;
+  padding: 20px 0;
 }
 
 
@@ -45,8 +60,10 @@
   color:#ff6600;
 }
 
-.sumPrice input{
-  margin-top: 8px;
+.sumPrice p{
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid #ddd;
 }
 
 .goodsList .numPrice{
@@ -54,76 +71,43 @@
   color: #ff6600;
 }
 
+/*地址*/
 .ems{
   background: #fff;
   margin-top: 10px;
-  border-top: 1px solid #ddd;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-left: 26px;
+  box-sizing: border-box;
 }
 
-.ems .top{
-  height: 46px;
-  line-height: 46px;
-  border-bottom: 1px solid #ddd;
-  padding:0 10px;
+.ems .mui-icon{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  font-size: 20px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
 }
 
-.ems .top button{
-  width: 64px;
-  height: 26px;
-  border: 1px solid #ff6600;
-  border-radius: 4px;
-  margin-top: 10px;
-  margin-left: 10px;
-  color: #ff6600;
-  text-align: center;
-  padding: 0;
-}
-
-/*地址*/
-.ems .address{
-  height: 80px;
-  border-bottom: 1px solid #ddd;
-  padding: 0 10px;
-}
 
 .ems .site{
   padding: 10px 10px;
-  border-bottom: 1px solid #ddd;
-  display: flex;
 }
 
-.ems .site .left{
-  flex: 1;
+.ems .site .phone{
+  float: right;
 }
 
-.ems .site .left p{
+.ems .site  p{
   line-height: 24px;
 }
-.ems .site .right{
-  width: 46px;
-}
-
-.ems .site .right button{
-  width: 46px;
-  height: 24px;
-  border: 1px solid #ddd;
-  background: #eeeeee;
-  color: #999999;
-  padding: 0;
-}
 
 
 
-.ems .address button{
-  height: 54px;
-  width: 100%;
-  border:1px solid #ddd;
-  margin-top: 12px;
-  border-radius: 6px;
-  text-align: center;
-  padding: 0;
-  color: #0077dd;
-}
 
 .clearing{
   height: 66px;
@@ -154,5 +138,27 @@
   border: none;
   border-radius: 6px;
   width: 100%;
+}
+
+.foortBtn{
+  overflow: hidden;
+  margin: 10px 0;
+  background: #fff;
+  padding: 10px 0;
+}
+
+.foortBtn button{
+  height: 26px;
+  padding: 0 14px;
+  text-align: center;
+  border-radius: 13px;
+  border: 1px solid #ddd;
+  float: right;
+  margin-right: 10px;
+}
+
+.foortBtn button:nth-child(2) {
+  color: #ff5500;
+  border: 1px solid #ff5500;
 }
 

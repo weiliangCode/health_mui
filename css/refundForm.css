@@ -1,0 +1,24 @@
+.useInfo{
+  padding: 5px 15px; 
+}
+
+.useInfo p{
+  height: 25px;
+  line-height: 25px;
+  color: #555555;
+  font-size: 15px;
+  text-align:left;
+}
+
+.useInfo input{
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 13px;
+}
+
+.submit{
+  width: 100%;
+}
