@@ -1,0 +1,98 @@
+{
+  "index.html": {
+    "resources": [
+      "css/base.css",
+      "js/zepto.js",
+      "html/member.html",
+      "images/icon.jpg",
+      "css/index.css",
+      "images/cart.gif",
+      "images/index/banner.png",
+      "images/logo.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "images/index/goods001.jpg",
+      "js/api.js",
+      "images/index/goods005.png",
+      "js/index.js",
+      "html/goodsInfo.html"
+    ],
+    "refer": [
+      "html/member.html",
+      "html/goodsInfo.html"
+    ]
+  },
+  "html/member.html": {
+    "resources": [
+      "images/member/Icon2.jpg",
+      "images/member/Icon3.jpg",
+      "index.html",
+      "js/member.js",
+      "images/member/Icon6.jpg",
+      "images/member/Icon5.jpg",
+      "fonts/mui.ttf",
+      "images/member/Icon1.jpg",
+      "images/member/Icon4.jpg",
+      "images/member/banner.png",
+      "css/member.css",
+      "html/order.html"
+    ],
+    "refer": [
+      "index.html",
+      "html/order.html"
+    ]
+  },
+  "html/goodsInfo.html": {
+    "resources": [
+      "js/goodsInfo.js",
+      "images/goodsInfo/goods004.jpg",
+      "images/goodsInfo/goods008.jpg",
+      "images/goodsInfo/goods010.jpg",
+      "images/goodsInfo/goods006.jpg",
+      "images/goodsInfo/goods009.jpg",
+      "images/goodsInfo/goods005.jpg",
+      "images/goodsInfo/banner.gif",
+      "images/goodsInfo/goods001.jpg",
+      "index.html",
+      "css/goodsInfo.css",
+      "images/loading.gif",
+      "images/goodsInfo/shopIcon.png",
+      "images/goodsInfo/goods002.jpg",
+      "images/goodsInfo/goods003.jpg",
+      "images/goodsInfo/goods007.jpg",
+      "html/member.html",
+      "html/cart.html"
+    ],
+    "refer": [
+      "index.html",
+      "html/member.html",
+      "html/cart.html"
+    ]
+  },
+  "html/order.html": {
+    "resources": [
+      "js/order.js",
+      "css/order.css",
+      "html/order.html",
+      "index.html"
+    ],
+    "refer": [
+      "html/order.html",
+      "index.html"
+    ]
+  },
+  "html/cart.html": {
+    "resources": [
+      "css/cart.css",
+      "images/cart/radio_true.png",
+      "js/cart.js",
+      "html/cart.html",
+      "images/cart/delete.png",
+      "index.html"
+    ],
+    "refer": [
+      "html/cart.html",
+      "index.html"
+    ]
+  }
+}
