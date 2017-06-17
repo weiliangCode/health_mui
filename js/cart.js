@@ -236,11 +236,15 @@ window.onload = function () {
         var num = parseInt(listArr.eq(i).find('.J_val').val());
         editGoods(g_id, num, function () {
           t2++;
-          if (t2 == t1) {
+          if (t2 >= t1) {
             cartData();
           }
         });
       }
+      if(listArr.length == 0) {
+        $('.J_loading').css('display', 'none');
+      }
+        
 
     }
   })

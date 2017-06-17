@@ -47,7 +47,7 @@ window.onload = function () {
             var str = '<li class="allOrder J_order">';
             str += '<p class="orderid">';
             str += '订单号：';
-            str += '<span>' + item.order_no+ '</span>';
+            str += '<span class="J_orderNo">' + item.order_no+ '</span>';
             if(item.status == '0') {
                 str += '<a href="javascript:;" class="J_cancel" data="' + item.order_no + '">取消</a>';
             }
@@ -87,7 +87,6 @@ window.onload = function () {
     //点击过付款
     $('.J_goodsList').on('tap','.J_buyBtn',function(){
         var order_no = $(this).attr('data');
-        // console.log(order_no);
         location.href = "obligationOrder.html?order_no=" + order_no;
         
     })
@@ -101,6 +100,13 @@ window.onload = function () {
             initDisplay();
         })
 
+    })
+
+
+    //点击了订单列表
+    $('.J_goodsList').on('tap','.J_orderNo',function() {
+        var orderNo = $(this).html();
+        location.href = "orderInfo.html?order_no=" + orderNo;
     })
 
 }

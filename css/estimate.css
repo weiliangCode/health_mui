@@ -1,0 +1,71 @@
+
+.goods{
+    overflow: hidden;
+    display: flex;
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.goods img{
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}
+
+.goods p{
+    flex: 1;
+}
+
+.goods p .grade{
+    margin-left: 5px;
+}
+
+.goods span.active{
+    color: #ff5000;
+    font-weight: 900;
+}
+
+.input{
+    background: #fff;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.input textarea{
+    height: 100px;
+    border: none;
+    padding: 0;
+    color: #ddd;
+}
+
+.shop{
+    background: #fff;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.shop p:nth-child(1){
+    height: 28px;
+    line-height: 28px;
+}
+
+.shop span.active{
+    color: #ff5000;
+    font-weight: 900;
+}
+
+
+
+.submit{
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.submit button{
+    width: 100%;
+    background: #ff5000;
+    color: #fff;
+}
