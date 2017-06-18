@@ -8,18 +8,31 @@
   <link href="../css/mui.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/base.css" />
   <link href="../css/apply.css" rel="stylesheet" />
+  <script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
   <script src="../js/mui.min.js"></script>
   <script src="../js/apply.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
+  <div class="prompt J_prompt">
+    <div class="content">
+      <!--<h3 class="top">标题</h3>-->
+      <div class="middle">
+        <p class="J_message">申请提交失败，请修改后提交！</p>
+      </div>
+      <div class="bottom">
+        <button class="J_promptBtn">确定</button>
+      </div>
+    </div>
+  </div>
+
   <div class="top">
     <span class="mui-icon mui-icon-arrowleft J_backBtn"></span>
     <h3>设置店铺</h3>
-    <button type="button">保存</button>
+    <button type="button" class="J_submit">保存</button>
   </div>
 
-  <div class="state">
+  <div class="state J_state">
     <ul>
       <li class="active"><span>1</span>设置店铺信息</li>
       <li><span>2</span>完成</li>
@@ -29,19 +42,25 @@
 
   <form class="useInfo"> 
     <p>店铺名称</p>
-    <input type="text" name="storeName" placeholder="请输入店铺名称">
+    <input type="text" name="storeName" class="J_storeName" placeholder="请输入店铺名称">
     <p>管理账号（手机号）</p>
-    <input type="number" name="phone" placeholder="清输入手机号">
+    <input type="number" name="phone" class="J_phone" placeholder="清输入手机号">
     <p>联系人姓名</p>
-    <input type="text" name="useName" placeholder="请输入姓名" value="张三">
+    <input type="text" name="useName" class="J_useName" placeholder="请输入姓名" value="张三">
     <p>联系人QQ</p>
-    <input type="number" name="qq" placeholder="请输入QQ号--选填">
-    <p>
-      <input name="agreement" type="radio" value="" />
+    <input type="number" name="qq" class="J_qq" placeholder="请输入QQ号--选填">
+    <!--<p>
+      <input name="agreement" type="radio" class="J_agreement" />
       我已阅读并同意
       <a href="javascript:;">代言协议</a>
-    </p>
+    </p>-->
   </form>
+  
+  <div class="finish J_finish">
+    <h3>
+      你已提交用户申请，我们会及时与你联系!
+    </h3>
+  </div>
   
 </body>
 

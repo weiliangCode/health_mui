@@ -49,7 +49,7 @@ window.onload = function () {
 
   //点击“我要分销” 按钮
   document.querySelector('.J_applyBtn').onclick = function () {
-    location.href = "prompt.html";
+    location.href = "apply.html";
   }
 
   //点击“进入店铺” 按钮

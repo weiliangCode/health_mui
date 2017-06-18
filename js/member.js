@@ -3,6 +3,9 @@ mui.ready(function() {
 
 
   //设置头像
+  if(localStorage.getItem('headimgurl')) {
+    $('.J_userImg').attr('src', localStorage.getItem('headimgurl'));
+  }
   $('.J_userName').html(localStorage.getItem('userName'));
   
   //获得会员信息

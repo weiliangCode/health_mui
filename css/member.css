@@ -1,3 +1,28 @@
+.useIcon{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  margin-top: 26px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  /*background: pink;*/
+}
+
+.useIcon .left{
+  height: 100%;
+  margin-right: 10px;
+}
+
+.useIcon .left img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.useIcon .right p{
+  color: orangered;
+}
+
 .content {
   background: #f9f9f9;
 }
@@ -29,7 +54,7 @@
 }
 
 .orderNum{
-  margin-top: 26px;
+  /*margin-top: 26px;*/
   width: 100%;
   height: 60px;
   background: #fff;

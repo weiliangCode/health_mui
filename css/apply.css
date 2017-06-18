@@ -1,3 +1,7 @@
+html,body{
+  height: 100%;
+}
+
 .top{
   width: 100%;
   height: 45px;
@@ -87,4 +91,21 @@
 
 .useInfo input[type="radio"] {
   color:#45a5cf;
+}
+
+.finish{
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: none;
+}
+
+.finish h3{
+  margin-top: 40%;
+  text-align: center;
+  font-size: 22px;
+  color: #000;
 }
