@@ -79,6 +79,9 @@
   color: #000;
 }
 
+.orderList{
+  margin-bottom: 56px;
+}
 .orderList .mui-table-view{
   margin-bottom: 12px;
 }

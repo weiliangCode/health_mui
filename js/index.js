@@ -19,24 +19,31 @@ mui.ready(function () {
     if (r != null) return unescape(r[2]); return null; //返回参数值
   }
 
-  // var code = getUrlParam('code');//拿这个code 请求的话要用这个获取openid
-  // //获得openID
-  // $.post(getOpenId(), {
-  //   code: code
-  // }, function (data) {
-  //   var userInfo = data.data.userInfo;
-  //   var userName = userInfo.name;
-  //   var headimgurl = userInfo.wx_headimgurl;
-  //   localStorage.setItem('openid',data.data.openid);
-  //   localStorage.setItem('userName',userName);
-  //   localStorage.setItem('headimgurl',headimgurl);
-  //   $('.J_userName').html(userName);
-  //   $('.J_userImg').attr('src',headimgurl);
-  // })
+  var code = getUrlParam('code');//拿这个code 请求的话要用这个获取openid
+  var opendid = '';
+  if(code) {
+    //获得openID
+    $.post(getOpenId(), {
+      code: code
+    }, function (data) {
+      var userInfo = data.data.userInfo;
+      var userName = userInfo.name;
+      var headimgurl = userInfo.wx_headimgurl;
+      opendid = data.data.openid;
+      localStorage.setItem('openid',opendid);
+      localStorage.setItem('userName',userName);
+      localStorage.setItem('headimgurl',headimgurl);
+      $('.J_userName').html(userName);
+      $('.J_userImg').attr('src',headimgurl);
+    })
+  } else{
+    opendid = localStorage.getItem('openid');
+    $('.J_userName').html(localStorage.getItem('userName'));
+    $('.J_userImg').attr('src',localStorage.getItem('headimgurl'));
+  }
 
   //测试账号
-  localStorage.setItem('openid','opSdF1VNR03IayTp9tlH7-DJ8c8M');
-  var opendid = localStorage.getItem('openid');
+  // localStorage.setItem('openid','opSdF1VNR03IayTp9tlH7-DJ8c8M');
   isGoods();
   //初始化数据
   mui.post(getGoodslist(), {
